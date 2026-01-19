@@ -4,6 +4,7 @@ import 'dart:ui';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../widgets/logo_widget.dart';
+import '../coming_soon_screen.dart';
 
 class HeroSection extends StatefulWidget {
   const HeroSection({super.key});
@@ -143,6 +144,34 @@ class _HeroSectionState extends State<HeroSection> {
                   ),
                 ),
                 const SizedBox(height: 30),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ComingSoonScreen(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.secondary,
+                    foregroundColor: AppColors.primary,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 20,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    elevation: 0,
+                  ),
+                  child: const Text(
+                    'DESCUBRIR MÁS',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
