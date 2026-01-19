@@ -52,12 +52,18 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - run: flutter build web --release --base-href "/"
+      - name: Build Web
+        run: flutter build web --release --base-href "/"
+      - name: Copy CNAME to build output
+        run: cp CNAME build/web/CNAME
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
@@ -74,5 +80,13 @@ jobs:
 Una vez configurado todo y que GitHub haya verificado el dominio:
 1.  Vuelve a `Settings` > `Pages`.
 2.  Marca la casilla **Enforce HTTPS**. (Esto puede tardar un poco mientras se genera el certificado SSL).
+
+## 6. Estado del Despliegue
+
+✅ **El workflow de despliegue está completamente configurado:**
+- El archivo `.github/workflows/deploy.yml` está configurado correctamente con el environment necesario
+- El archivo `CNAME` se copia automáticamente al directorio de build
+- El despliegue se activa automáticamente cuando se hace push a la rama `main`
+- La página se desplegará en `logopediacastelo.com` una vez que los registros DNS estén propagados
 
 ¡Listo! Tu web profesional de logopedia estará disponible en tu propio dominio. 🚀🍐
