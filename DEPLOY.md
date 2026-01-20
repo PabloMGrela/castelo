@@ -8,6 +8,9 @@ Esta guía explica cómo desplegar tu página de logopedia en **GitHub Pages** u
 2.  Ve a `Settings` > `Pages`.
 3.  En **Build and deployment** > **Source**, selecciona `GitHub Actions`.
 
+> [!IMPORTANT]
+> **IMPORTANTE**: Debes seleccionar `GitHub Actions` como fuente de despliegue. Si seleccionas "Deploy from a branch", GitHub creará automáticamente un workflow llamado "pages-build-deployment" que intentará desplegar el contenido del repositorio como sitio estático, causando conflictos con nuestro workflow personalizado de Flutter.
+
 ## 2. Configurar el Dominio en GitHub
 
 1.  En la misma sección de `Pages`, busca **Custom domain**.
@@ -90,3 +93,22 @@ Una vez configurado todo y que GitHub haya verificado el dominio:
 - La página se desplegará en `logopediacastelo.com` una vez que los registros DNS estén propagados
 
 ¡Listo! Tu web profesional de logopedia estará disponible en tu propio dominio. 🚀🍐
+
+## Solución de Problemas
+
+### Workflow "pages-build-deployment" aparece automáticamente
+
+Si ves un workflow llamado "pages-build-deployment" ejecutándose automáticamente (además de nuestro workflow personalizado "Deploy to GitHub Pages"):
+
+**Causa**: GitHub Pages está configurado para desplegar desde una rama en lugar de usar GitHub Actions.
+
+**Solución**:
+1. Ve a `Settings` > `Pages` en tu repositorio
+2. En **Build and deployment** > **Source**, asegúrate de seleccionar `GitHub Actions` (NO "Deploy from a branch")
+3. Guarda los cambios
+4. El workflow automático "pages-build-deployment" dejará de ejecutarse
+
+Este cambio es necesario porque:
+- Nuestro workflow personalizado (`deploy.yml`) construye la aplicación Flutter y la despliega correctamente
+- El workflow automático de GitHub intentaría desplegar los archivos del repositorio como sitio estático, sin compilar la aplicación Flutter
+- Solo debe ejecutarse nuestro workflow personalizado que maneja la aplicación Flutter web
