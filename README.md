@@ -28,7 +28,7 @@ Logopedia Castelo is a speech therapy clinic dedicated to providing professional
 
 This is a Flutter web application. For development setup:
 
-1. Install Flutter SDK (version 3.9.2 or higher)
+1. Install Flutter SDK (see `pubspec.yaml` for SDK requirements)
 2. Run `flutter pub get` to install dependencies
 3. Run `flutter run -d chrome` for development
 4. Run `flutter build web --release` to build for production
