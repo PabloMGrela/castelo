@@ -9,7 +9,7 @@ Esta guía explica cómo desplegar tu página de logopedia en **GitHub Pages** u
 3.  En **Build and deployment** > **Source**, selecciona `GitHub Actions`.
 
 > [!IMPORTANT]
-> **IMPORTANTE**: Debes seleccionar `GitHub Actions` como fuente de despliegue. Si seleccionas "Deploy from a branch", GitHub creará automáticamente un workflow llamado "pages-build-deployment" que intentará desplegar el README como sitio estático, causando conflictos con nuestro workflow personalizado de Flutter.
+> **IMPORTANTE**: Debes seleccionar `GitHub Actions` como fuente de despliegue. Si seleccionas "Deploy from a branch", GitHub creará automáticamente un workflow llamado "pages-build-deployment" que intentará desplegar el contenido del repositorio como sitio estático, causando conflictos con nuestro workflow personalizado de Flutter.
 
 ## 2. Configurar el Dominio en GitHub
 
@@ -110,5 +110,5 @@ Si ves un workflow llamado "pages-build-deployment" ejecutándose automáticamen
 
 Este cambio es necesario porque:
 - Nuestro workflow personalizado (`deploy.yml`) construye la aplicación Flutter y la despliega correctamente
-- El workflow automático de GitHub intentaría desplegar el README.md como página estática, causando confusión
+- El workflow automático de GitHub intentaría desplegar los archivos del repositorio como sitio estático, sin compilar la aplicación Flutter
 - Solo debe ejecutarse nuestro workflow personalizado que maneja la aplicación Flutter web
