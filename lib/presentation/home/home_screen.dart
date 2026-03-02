@@ -6,6 +6,7 @@ import '../widgets/nav_bar.dart';
 import 'sections/hero_section.dart';
 import 'sections/about_section.dart';
 import 'sections/services_section.dart';
+import 'sections/areas_section.dart';
 import 'sections/contact_section.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey _aboutKey = GlobalKey();
   final GlobalKey _servicesKey = GlobalKey();
   final GlobalKey _contactKey = GlobalKey();
+  final GlobalKey _interventionAreasKey = GlobalKey();
 
   void _scrollTo(GlobalKey key) {
     final context = key.currentContext;
@@ -57,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onAboutTap: () => _scrollTo(_aboutKey),
           onServicesTap: () => _scrollTo(_servicesKey),
           onContactTap: () => _scrollTo(_contactKey),
+          onInterventionAreasTap: () => _scrollTo(_interventionAreasKey),
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
         ),
@@ -83,13 +86,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   _buildDrawerItem(
                     context,
-                    AppStrings.navAbout,
-                    () => _scrollTo(_aboutKey),
+                    AppStrings.navServices,
+                    () => _scrollTo(_servicesKey),
                   ),
                   _buildDrawerItem(
                     context,
-                    AppStrings.navServices,
-                    () => _scrollTo(_servicesKey),
+                    AppStrings.navInterventionAreas,
+                    () => _scrollTo(_interventionAreasKey),
+                  ),
+                  _buildDrawerItem(
+                    context,
+                    AppStrings.navAbout,
+                    () => _scrollTo(_aboutKey),
                   ),
                   _buildDrawerItem(
                     context,
@@ -108,6 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
               HeroSection(key: _heroKey),
               AboutSection(key: _aboutKey),
               ServicesSection(key: _servicesKey),
+              AreasSection(key: _interventionAreasKey),
               ContactSection(key: _contactKey),
             ],
           ),

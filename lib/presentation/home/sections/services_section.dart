@@ -19,6 +19,15 @@ class ServicesSection extends StatelessWidget {
               context,
             ).textTheme.displayMedium?.copyWith(color: AppColors.primary),
           ),
+          const SizedBox(height: 16),
+          Text(
+            AppStrings.servicesSubtitle,
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              color: Colors.grey[600],
+              fontSize: 18,
+            ),
+            textAlign: TextAlign.center,
+          ),
           const SizedBox(height: 60),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -29,21 +38,33 @@ class ServicesSection extends StatelessWidget {
               children: [
                 _ServiceCircle(
                   title: AppStrings.service1Title,
-                  description: AppStrings.service1Desc,
-                  icon: Icons.people,
-                  color: const Color(0xFFE8F5E9),
+                  icon: "assets/icons/baby-boy.png",
+                  color: const Color(0xFFFCE4EC),
+                  tintColor: const Color(0xFFD81B60),
                 ),
                 _ServiceCircle(
                   title: AppStrings.service2Title,
-                  description: AppStrings.service2Desc,
-                  icon: Icons.psychology,
-                  color: const Color(0xFFE1F5FE),
+                  icon: "assets/icons/mindset.png",
+                  color: const Color(0xFFE3F2FD),
+                  tintColor: const Color(0xFF1E88E5),
                 ),
                 _ServiceCircle(
                   title: AppStrings.service3Title,
-                  description: AppStrings.service3Desc,
-                  icon: Icons.favorite_border,
-                  color: const Color(0xFFFFF3E0),
+                  icon: "assets/icons/speak.png",
+                  color: const Color(0xFFFFF8E1),
+                  tintColor: const Color(0xFFFFB300),
+                ),
+                _ServiceCircle(
+                  title: AppStrings.service4Title,
+                  icon: "assets/icons/family.png",
+                  color: const Color(0xFFEDE7F6),
+                  tintColor: const Color(0xFF7B1FA2),
+                ),
+                _ServiceCircle(
+                  title: AppStrings.service5Title,
+                  icon: "assets/icons/aging.png",
+                  color: const Color(0xFFE8F5E9),
+                  tintColor: const Color(0xFF43A047),
                 ),
               ],
             ),
@@ -56,15 +77,15 @@ class ServicesSection extends StatelessWidget {
 
 class _ServiceCircle extends StatelessWidget {
   final String title;
-  final String description;
-  final IconData icon;
+  final String icon;
   final Color color;
+  final Color tintColor;
 
   const _ServiceCircle({
     required this.title,
-    required this.description,
     required this.icon,
     required this.color,
+    required this.tintColor,
   });
 
   @override
@@ -86,10 +107,12 @@ class _ServiceCircle extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Icon(
-              icon,
-              size: 50,
-              color: AppColors.primary.withOpacity(0.8),
+            child: ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                tintColor.withValues(alpha: 0.8),
+                BlendMode.srcATop,
+              ),
+              child: Image.asset(icon, width: 70, height: 70),
             ),
           ),
         ),
@@ -102,19 +125,9 @@ class _ServiceCircle extends StatelessWidget {
                 title,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                   color: AppColors.text,
-                ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                description,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey[600],
-                  height: 1.4,
                 ),
               ),
             ],

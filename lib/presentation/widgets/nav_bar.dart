@@ -7,6 +7,7 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onAboutTap;
   final VoidCallback? onServicesTap;
   final VoidCallback? onContactTap;
+  final VoidCallback? onInterventionAreasTap;
   final Color? backgroundColor;
   final Color? foregroundColor;
 
@@ -16,6 +17,7 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
     this.onAboutTap,
     this.onServicesTap,
     this.onContactTap,
+    this.onInterventionAreasTap,
     this.backgroundColor,
     this.foregroundColor,
   });
@@ -63,16 +65,22 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
                   onTap: onHomeTap,
                   color: foregroundColor,
                 ),
-                const SizedBox(width: 30),
+                const SizedBox(width: 30),             
                 _NavBarItem(
-                  title: 'Sobre mí',
-                  onTap: onAboutTap,
+                  title: 'Servicios',
+                  onTap: onServicesTap,
                   color: foregroundColor,
                 ),
                 const SizedBox(width: 30),
                 _NavBarItem(
-                  title: 'Servicios',
-                  onTap: onServicesTap,
+                  title: 'Áreas de intervención',
+                  onTap: onInterventionAreasTap,
+                  color: foregroundColor,
+                ),
+                const SizedBox(width: 30),
+                _NavBarItem(
+                  title: 'Sobre mí',
+                  onTap: onAboutTap,
                   color: foregroundColor,
                 ),
                 const SizedBox(width: 30),
