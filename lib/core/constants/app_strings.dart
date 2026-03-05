@@ -12,8 +12,7 @@ class AppStrings {
 
   // About Section
   static const String aboutTitle = 'Filosofía';
-  static const String aboutSubtitle =
-      '¿Cómo te puedo ayudar?';
+  static const String aboutSubtitle = '¿Cómo te puedo ayudar?';
 
   static const String principle1Title = 'Comunicándome';
   static const String principle1Desc =
@@ -95,8 +94,7 @@ class AppStrings {
 
   // Contact Section
   static const String contactTitle = 'Contacto';
-  static const String contactSubtitle =
-      '¿Hablamos? Estoy aquí para ayudarte.';
+  static const String contactSubtitle = '¿Hablamos? Estoy aquí para ayudarte.';
 
   static const String contactPhoneTitle = 'Teléfono';
   static const String contactPhoneVal = '+34 626 929 600';
@@ -114,12 +112,12 @@ class AppStrings {
   static const String contactInstaVal = '@logopediacastelo';
   static const String contactInstaSub = 'Síguenos para consejos y noticias';
 
-  static const String copyright = '© 2026 Logopedia Castelo.';
+  static const String copyright =
+      '© 2026 Logopedia Castelo. - Registro sanitario: C-15-005229';
 
   // Deep Links
   static const String urlTel = 'tel:+34626929600';
   static const String urlMail = 'mailto:hola@logopediacastelo.com';
-  static const String urlMaps =
-      'https://maps.app.goo.gl/aVQbwSGL4xsJjpAEA';
+  static const String urlMaps = 'https://maps.app.goo.gl/aVQbwSGL4xsJjpAEA';
   static const String urlInsta = 'https://www.instagram.com/logopediacastelo/';
 }

@@ -15,93 +15,160 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 20),
-      color: Colors.white,
-      child: Column(
-        children: [
-          Text(
-            AppStrings.contactTitle,
-            style: Theme.of(context).textTheme.displayMedium?.copyWith(
-              color: AppColors.primary,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            AppStrings.contactSubtitle,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Colors.grey[600],
-              fontSize: 18,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 80),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Wrap(
-              spacing: 40,
-              runSpacing: 40,
-              alignment: WrapAlignment.center,
+    final size = MediaQuery.of(context).size;
+    final isMobile = size.width < 900;
+
+    return Semantics(
+      container: true,
+      label: 'Sección de Contacto y Ubicación',
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.fromLTRB(
+          isMobile ? 24 : 64,
+          120,
+          isMobile ? 24 : 64,
+          60,
+        ),
+        color: AppColors.primary,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1200),
+            child: Column(
               children: [
-                _ContactCard(
-                  icon: Icons.phone_outlined,
-                  title: AppStrings.contactPhoneTitle,
-                  content: AppStrings.contactPhoneVal,
-                  subtitle: AppStrings.contactPhoneSub,
-                  onTap: () => _launchUrl(AppStrings.urlTel),
+                // Header
+                Column(
+                  children: [
+                    Semantics(
+                      label: 'Título de la sección',
+                      child: Text(
+                        AppStrings.contactTitle.toUpperCase(),
+                        style: const TextStyle(
+                          color: AppColors.secondary,
+                          fontSize: 16,
+                          letterSpacing: 6.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Semantics(
+                      header: true,
+                      child: Text(
+                        AppStrings.contactSubtitle,
+                        textAlign: TextAlign.center,
+                        style:
+                            Theme.of(context).textTheme.displaySmall?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    ExcludeSemantics(
+                      child: Container(
+                        width: 80,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: AppColors.secondary,
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                _ContactCard(
-                  icon: Icons.email_outlined,
-                  title: AppStrings.contactEmailTitle,
-                  content: AppStrings.contactEmailVal,
-                  subtitle: AppStrings.contactEmailSub,
-                  onTap: () => _launchUrl(AppStrings.urlMail),
+                const SizedBox(height: 100),
+
+                // Contact Grid
+                Wrap(
+                  spacing: 24,
+                  runSpacing: 24,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    _ContactCard(
+                      icon: Icons.phone_android_rounded,
+                      title: AppStrings.contactPhoneTitle,
+                      content: AppStrings.contactPhoneVal,
+                      subtitle: AppStrings.contactPhoneSub,
+                      onTap: () => _launchUrl(AppStrings.urlTel),
+                      semanticLabel: 'Llamar por teléfono',
+                    ),
+                    _ContactCard(
+                      icon: Icons.alternate_email_rounded,
+                      title: AppStrings.contactEmailTitle,
+                      content: AppStrings.contactEmailVal,
+                      subtitle: AppStrings.contactEmailSub,
+                      onTap: () => _launchUrl(AppStrings.urlMail),
+                      semanticLabel: 'Enviar un correo electrónico',
+                    ),
+                    _ContactCard(
+                      icon: Icons.map_outlined,
+                      title: AppStrings.contactLocTitle,
+                      content: AppStrings.contactLocVal,
+                      subtitle: AppStrings.contactLocSub,
+                      onTap: () => _launchUrl(AppStrings.urlMaps),
+                      semanticLabel: 'Ver ubicación en el mapa',
+                    ),
+                    _ContactCard(
+                      icon: Icons.camera_alt_outlined,
+                      title: AppStrings.contactInstaTitle,
+                      content: AppStrings.contactInstaVal,
+                      subtitle: AppStrings.contactInstaSub,
+                      onTap: () => _launchUrl(AppStrings.urlInsta),
+                      semanticLabel: 'Abrir perfil de Instagram',
+                    ),
+                  ],
                 ),
-                _ContactCard(
-                  icon: Icons.location_on_outlined,
-                  title: AppStrings.contactLocTitle,
-                  content: AppStrings.contactLocVal,
-                  subtitle: AppStrings.contactLocSub,
-                  onTap: () => _launchUrl(AppStrings.urlMaps),
-                ),
-                _ContactCard(
-                  icon: Icons.camera_alt_outlined,
-                  title: AppStrings.contactInstaTitle,
-                  content: AppStrings.contactInstaVal,
-                  subtitle: AppStrings.contactInstaSub,
-                  onTap: () => _launchUrl(AppStrings.urlInsta),
+
+                const SizedBox(height: 120),
+
+                // Footer
+                Column(
+                  children: [
+                    ExcludeSemantics(
+                      child: Divider(
+                        color: Colors.white.withValues(alpha: 0.1),
+                        height: 1,
+                      ),
+                    ),
+                    const SizedBox(height: 48),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          AppStrings.copyright,
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.5),
+                            fontSize: 14,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        const ExcludeSemantics(
+                          child: Icon(
+                            Icons.favorite_rounded,
+                            size: 16,
+                            color: Color(0x99CCFFE0), // AppColors.secondary
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 100),
-          const Divider(color: Colors.black12),
-          const SizedBox(height: 40),
-          Opacity(
-            opacity: 0.6,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(AppStrings.copyright),
-                const SizedBox(width: 8),
-                const Icon(Icons.favorite, size: 14, color: AppColors.primary),
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 }
 
-class _ContactCard extends StatelessWidget {
+class _ContactCard extends StatefulWidget {
   final IconData icon;
   final String title;
   final String content;
   final String subtitle;
   final VoidCallback onTap;
+  final String semanticLabel;
 
   const _ContactCard({
     required this.icon,
@@ -109,67 +176,97 @@ class _ContactCard extends StatelessWidget {
     required this.content,
     required this.subtitle,
     required this.onTap,
+    required this.semanticLabel,
   });
 
   @override
+  State<_ContactCard> createState() => _ContactCardState();
+}
+
+class _ContactCardState extends State<_ContactCard> {
+  bool _isHovered = false;
+
+  @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(32),
-      child: Container(
-        width: 320,
-        padding: const EdgeInsets.all(32),
-        decoration: BoxDecoration(
-          color: AppColors.primary.withOpacity(0.04),
+    return Semantics(
+      button: true,
+      label: '${widget.title}: ${widget.content}. ${widget.subtitle}',
+      onTapHint: widget.semanticLabel,
+      child: MouseRegion(
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        child: InkWell(
+          onTap: widget.onTap,
           borderRadius: BorderRadius.circular(32),
-          border: Border.all(
-            color: AppColors.primary.withOpacity(0.1),
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.primary.withOpacity(0.1),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            width: 280,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
+            decoration: BoxDecoration(
+              color: _isHovered
+                  ? Colors.white.withValues(alpha: 0.12)
+                  : Colors.white.withValues(alpha: 0.05),
+              borderRadius: BorderRadius.circular(32),
+              border: Border.all(
+                color: _isHovered
+                    ? AppColors.secondary.withValues(alpha: 0.5)
+                    : Colors.white.withValues(alpha: 0.1),
+                width: 1.5,
+              ),
+            ),
+            child: Column(
+              children: [
+                ExcludeSemantics(
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: _isHovered
+                          ? AppColors.secondary
+                          : Colors.white.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      widget.icon,
+                      color:
+                          _isHovered ? AppColors.primary : AppColors.secondary,
+                      size: 28,
+                    ),
                   ),
-                ],
-              ),
-              child: Icon(icon, color: AppColors.primary, size: 32),
+                ),
+                const SizedBox(height: 32),
+                Text(
+                  widget.title.toUpperCase(),
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.secondary.withValues(alpha: 0.8),
+                    letterSpacing: 2.0,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  widget.content,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  widget.subtitle,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.white.withValues(alpha: 0.5),
+                    height: 1.4,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
-            const SizedBox(height: 24),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: AppColors.text,
-                letterSpacing: 0.5,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              content,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: AppColors.primary,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              subtitle,
-              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-              textAlign: TextAlign.center,
-            ),
-          ],
+          ),
         ),
       ),
     );
