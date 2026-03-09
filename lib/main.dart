@@ -1,4 +1,5 @@
 import 'package:castelo/presentation/home/home_screen.dart';
+import 'package:castelo/presentation/about/about_me_screen.dart';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
 
@@ -15,7 +16,11 @@ class MyApp extends StatelessWidget {
       title: 'Logopedia Castelo',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/sobre-mi': (context) => const AboutMeScreen(),
+      },
     );
   }
 }

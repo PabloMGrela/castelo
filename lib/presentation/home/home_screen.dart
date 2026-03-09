@@ -19,7 +19,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   final GlobalKey _heroKey = GlobalKey();
-  final GlobalKey _aboutKey = GlobalKey();
   final GlobalKey _servicesKey = GlobalKey();
   final GlobalKey _contactKey = GlobalKey();
   final GlobalKey _interventionAreasKey = GlobalKey();
@@ -69,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
           duration: const Duration(milliseconds: 300),
           child: NavBar(
             onHomeTap: () => _scrollTo(_heroKey),
-            onAboutTap: () => _scrollTo(_aboutKey),
+            onAboutTap: () => Navigator.of(context).pushNamed('/sobre-mi'),
             onServicesTap: () => _scrollTo(_servicesKey),
             onContactTap: () => _scrollTo(_contactKey),
             onInterventionAreasTap: () => _scrollTo(_interventionAreasKey),
@@ -126,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildDrawerItem(
                 context,
                 AppStrings.navAbout,
-                () => _scrollTo(_aboutKey),
+                () => Navigator.of(context).pushNamed('/sobre-mi'),
               ),
               _buildDrawerItem(
                 context,
@@ -153,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             HeroSection(key: _heroKey),
-            AboutSection(key: _aboutKey),
+            const AboutSection(),
             ServicesSection(key: _servicesKey),
             AreasSection(key: _interventionAreasKey),
             ContactSection(key: _contactKey),

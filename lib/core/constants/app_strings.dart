@@ -92,6 +92,42 @@ class AppStrings {
     'Enfermedad de Alzheimer',
   ];
 
+  // About Me Page
+  static const String aboutMeTitle = 'Sobre mí';
+  static const String aboutMeSubtitle = 'Cristina Barrós Pérez';
+  static const String aboutMeCollegiateNumber = 'Logopeda colegiada nº 15-0360';
+  static const String aboutMeBio1 =
+      'Supe que quería ser logopeda en cuanto leí el nombre de la carrera. Fue una suerte de amor a primera vista.';
+  static const String aboutMeBio2 =
+      'Desde que terminé la carrera hasta ahora, he tenido la fortuna de trabajar de lo quiero y se me da bien, aquí, en A Coruña, en Santiago de Compostela y en Carballo.';
+  static const String aboutMeBio3 =
+      'Ahora, gracias a la ayuda y motivación de los míos, tengo mi propio proyecto, Castelo, en el que pongo toda mi dedicación e ilusión.';
+
+  static const String aboutMeCvTitle = 'Mi currículum';
+  static const List<Map<String, String>> aboutMeCvItems = [
+    {
+      'title': 'Diplomada en Logopedia',
+      'subtitle': 'Universidade da Coruña',
+    },
+    {
+      'title':
+          'Máster de Intervención Logopédica en la infancia y la adolescencia',
+      'subtitle': 'Universidade da Coruña',
+    },
+    {
+      'title': 'Máster en Terapia Miofuncional',
+      'subtitle': 'Instituto Superior de Estudios Psicológicos de Madrid',
+    },
+    {
+      'title': 'Posgrado en Atención Temprana',
+      'subtitle': 'Instituto Superior de Estudios Psicológicos de Madrid',
+    },
+  ];
+  static const String aboutMeExtra =
+      'Formaciones complementarias en Sistemas Aumentativos y Alternativos de Comunicación, rehabilitación en implantes auditivos, trastornos del neurodesarrollo y en trastornos del desarrollo psicomotor, entre otras.';
+  static const String aboutMeWorkshops =
+      'Impartición de talleres de memoria para la tercera edad en el concello de Carballo dentro de las actividades Remocea.';
+
   // Contact Section
   static const String contactTitle = 'Contacto';
   static const String contactSubtitle = '¿Hablamos? Estoy aquí para ayudarte.';
