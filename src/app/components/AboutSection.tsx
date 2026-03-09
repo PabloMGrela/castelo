@@ -37,7 +37,7 @@ export default function AboutSection() {
           </span>
         </div>
         <h2 className="mt-8 max-w-[700px] font-[family-name:var(--font-playfair)] text-4xl font-extrabold leading-tight text-text md:text-5xl">
-          <span className="sr-only">Logopedia en A Coruña: </span>
+          <span className="sr-only">Logopedia en A Coruña (Los Castros, Os Castros, Gaiteira, Cuatro Caminos): </span>
           {strings.aboutSubtitle}
         </h2>
 

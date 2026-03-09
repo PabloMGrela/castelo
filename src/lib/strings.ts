@@ -142,7 +142,8 @@ export const strings = {
   contactInstaVal: "@logopediacastelo",
   contactInstaSub: "Síguenos para consejos y noticias",
 
-  copyright: "© 2026 Logopedia Castelo. - Registro sanitario: C-15-005229",
+  copyright: "© 2026 Logopedia Castelo",
+  sanitaryRegistry: "Registro sanitario: C-15-005229",
 
   // Deep Links
   urlTel: "tel:+34626929600",

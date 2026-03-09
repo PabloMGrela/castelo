@@ -54,15 +54,13 @@ export const metadata: Metadata = {
     siteName: "Logopedia Castelo",
     locale: "es_ES",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Logopedia Castelo | Clínica de Logopedia",
-    description:
-      "Clínica de logopedia en A Coruña. Comunicación, Cercanía y Compromiso.",
-    images: ["/icons/Icon-512.png"],
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": "https://www.instagram.com/logopediacastelo/",
+    },
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "/" },
   icons: { icon: "/favicon.png", apple: "/icons/Icon-192.png" },
 };
 

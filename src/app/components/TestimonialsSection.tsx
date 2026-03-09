@@ -32,7 +32,7 @@ const testimonials = [
 
 function TestimonialCard({ name, text }: { name: string; text: string }) {
   return (
-    <article className="flex min-w-[300px] max-w-[350px] flex-none flex-col rounded-[32px] border border-gray-100 bg-white p-8 shadow-[0_10px_20px_rgba(0,0,0,0.03)] transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] md:min-w-[350px]">
+    <article className="flex w-[85vw] flex-none flex-col rounded-[32px] border border-gray-100 bg-white p-8 shadow-[0_10px_20px_rgba(0,0,0,0.03)] transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] md:w-[350px]">
       <div className="flex gap-1 text-amber-400" aria-hidden="true">
         {[1, 2, 3, 4, 5].map((i) => (
           <MdStar key={i} size={20} />
@@ -54,8 +54,8 @@ function TestimonialCard({ name, text }: { name: string; text: string }) {
 export default function TestimonialsSection() {
   return (
     <section className="bg-primary/[0.02] py-32" aria-label="Opiniones de pacientes">
-      <div className="mx-auto max-w-[1200px] px-6 md:px-16">
-        <div className="text-center">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="px-6 text-center md:px-16">
           <span className="text-base font-bold tracking-[6px] text-primary uppercase">
             {strings.testimonialsTitle}
           </span>
@@ -69,8 +69,8 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Horizontal Carousel */}
-        <div className="mt-20 overflow-x-auto pb-8 -mx-6 px-6 no-scrollbar">
-          <div className="flex gap-8 w-max">
+        <div className="mt-20 overflow-x-auto pb-12 no-scrollbar">
+          <div className="flex gap-6 px-6 md:gap-8 md:px-16 w-max">
             {testimonials.map((t) => (
               <TestimonialCard key={t.name} {...t} />
             ))}
