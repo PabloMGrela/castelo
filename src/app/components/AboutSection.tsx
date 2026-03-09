@@ -26,20 +26,23 @@ const principles: { title: string; description: string; icon: IconType }[] = [
 export default function AboutSection() {
   return (
     <section className="relative overflow-hidden bg-white py-32" aria-label="Filosofía">
+      {/* Hidden SEO Keywords */}
+      <span className="sr-only">Logopedia en A Coruña: Los Castros, Os Castros, Gaiteira, Cuatro Caminos</span>
+      
       {/* Decorative shape */}
       <div className="absolute -right-24 top-24 h-[400px] w-[400px] rotate-45 rounded-[80px] bg-primary/5" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-[1200px] px-6 md:px-16">
-        <div className="flex items-center gap-6">
-          <div className="h-0.5 w-[60px] bg-primary" aria-hidden="true" />
-          <span className="text-base font-bold tracking-[4px] text-primary uppercase">
+        <div className="text-center">
+          <span className="text-base font-bold tracking-[6px] text-primary uppercase">
             {strings.aboutTitle}
           </span>
+          <h2 className="mt-6 font-[family-name:var(--font-playfair)] text-3xl font-extrabold text-text md:text-4xl">
+            <span className="sr-only">Logopedia en A Coruña: </span>
+            {strings.aboutSubtitle}
+          </h2>
+          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-secondary" aria-hidden="true" />
         </div>
-        <h2 className="mt-8 max-w-[700px] font-[family-name:var(--font-playfair)] text-4xl font-extrabold leading-tight text-text md:text-5xl">
-          <span className="sr-only">Logopedia en A Coruña (Los Castros, Os Castros, Gaiteira, Cuatro Caminos): </span>
-          {strings.aboutSubtitle}
-        </h2>
 
         <div className="mt-20 flex flex-wrap justify-center gap-8">
           {principles.map((p) => (

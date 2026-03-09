@@ -149,7 +149,7 @@ export default function ContactSection() {
           <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-secondary" aria-hidden="true" />
         </div>
 
-        <div className="mt-24 flex flex-wrap justify-center gap-6">
+        <div className="mx-auto mt-24 grid max-w-[600px] grid-cols-1 justify-items-center gap-6 md:grid-cols-2">
           {contacts.map((c) => (
             <ContactCard key={c.title} {...c} />
           ))}

@@ -11,8 +11,8 @@ export const strings = {
   heroKeywords: "Comunicación · Cercanía · Compromiso",
 
   // About Section
-  aboutTitle: "Filosofía",
-  aboutSubtitle: "Tu clínica de logopedia de confianza en A Coruña",
+  aboutTitle: "Metodología",
+  aboutSubtitle: "¿Cómo te puedo ayudar?",
   principle1Title: "Comunicándome",
   principle1Desc:
     "Escuchándote e informándote, atendiendo tus necesidades y haciendo un seguimiento de tus avances.",
