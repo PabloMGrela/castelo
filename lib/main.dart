@@ -17,9 +17,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/sobre-mi': (context) => const AboutMeScreen(),
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/sobre-mi':
+            return MaterialPageRoute(
+              builder: (context) => const AboutMeScreen(),
+            );
+          case '/':
+          default:
+            final section = settings.arguments as String?;
+            return MaterialPageRoute(
+              builder: (context) => HomeScreen(scrollToSection: section),
+            );
+        }
       },
     );
   }

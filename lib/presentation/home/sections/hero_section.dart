@@ -4,7 +4,6 @@ import 'dart:ui';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../widgets/logo_widget.dart';
-import '../coming_soon_screen.dart';
 
 class HeroSection extends StatefulWidget {
   const HeroSection({super.key});

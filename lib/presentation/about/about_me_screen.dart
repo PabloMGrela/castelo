@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import '../../core/theme/app_colors.dart';
 import '../../core/constants/app_strings.dart';
 import '../widgets/nav_bar.dart';
+import '../widgets/logo_widget.dart';
 import '../home/sections/contact_section.dart';
 
 class AboutMeScreen extends StatefulWidget {
@@ -54,6 +55,82 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
+      endDrawer: Drawer(
+        width: 320,
+        backgroundColor: AppColors.primary,
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const LogoWidget(
+                      size: 140,
+                      variant: LogoVariant.full,
+                      color: Colors.white,
+                    ),
+                    IconButton(
+                      icon: const Icon(
+                        Icons.close_rounded,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ],
+                ),
+              ),
+              const Divider(color: Colors.white12, indent: 40, endIndent: 40),
+              const SizedBox(height: 20),
+              _buildDrawerItem(
+                context,
+                AppStrings.navHome,
+                () => Navigator.of(context).pushReplacementNamed('/'),
+              ),
+              _buildDrawerItem(
+                context,
+                AppStrings.navServices,
+                () => Navigator.of(context).pushReplacementNamed('/', arguments: 'services'),
+              ),
+              _buildDrawerItem(
+                context,
+                AppStrings.navInterventionAreas,
+                () => Navigator.of(context).pushReplacementNamed('/', arguments: 'areas'),
+              ),
+              _buildDrawerItem(
+                context,
+                AppStrings.navAbout,
+                () {
+                  _scrollController.animateTo(
+                    0,
+                    duration: const Duration(milliseconds: 1000),
+                    curve: Curves.easeInOutCubic,
+                  );
+                },
+              ),
+              _buildDrawerItem(
+                context,
+                AppStrings.navContact,
+                () => _scrollTo(_contactKey),
+              ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Text(
+                  AppStrings.copyright,
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.3),
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
         child: NavBar(
@@ -66,9 +143,9 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
             );
           },
           onServicesTap: () =>
-              Navigator.of(context).pushReplacementNamed('/'),
+              Navigator.of(context).pushReplacementNamed('/', arguments: 'services'),
           onInterventionAreasTap: () =>
-              Navigator.of(context).pushReplacementNamed('/'),
+              Navigator.of(context).pushReplacementNamed('/', arguments: 'areas'),
           onContactTap: () => _scrollTo(_contactKey),
           backgroundColor: _isScrolled ? Colors.white : AppColors.primary,
           foregroundColor: _isScrolled ? AppColors.primary : Colors.white,
@@ -85,6 +162,30 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildDrawerItem(
+    BuildContext context,
+    String title,
+    VoidCallback onTap,
+  ) {
+    return ListTile(
+      title: Text(
+        title.toUpperCase(),
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 2.0,
+        ),
+      ),
+      onTap: () {
+        Navigator.pop(context);
+        onTap();
+      },
+      contentPadding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+      hoverColor: Colors.white10,
     );
   }
 

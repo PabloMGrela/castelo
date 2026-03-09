@@ -10,7 +10,9 @@ import 'sections/areas_section.dart';
 import 'sections/contact_section.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final String? scrollToSection;
+
+  const HomeScreen({super.key, this.scrollToSection});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -29,6 +31,23 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _scrollController.addListener(_onScroll);
+    if (widget.scrollToSection != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _scrollToSection(widget.scrollToSection!);
+      });
+    }
+  }
+
+  void _scrollToSection(String section) {
+    final keys = {
+      'services': _servicesKey,
+      'areas': _interventionAreasKey,
+      'contact': _contactKey,
+    };
+    final key = keys[section];
+    if (key != null) {
+      _scrollTo(key);
+    }
   }
 
   void _onScroll() {
