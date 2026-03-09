@@ -50,9 +50,23 @@ export const metadata: Metadata = {
     title: "Logopedia Castelo | Logopedia en todas las etapas de la vida",
     description:
       "Clínica de logopedia en A Coruña. Especialistas en comunicación, desarrollo, daño cerebral y terapia miofuncional.",
-    images: [{ url: "/icons/Icon-512.png" }],
+    images: [
+      {
+        url: "/full_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Logopedia Castelo Full Logo",
+      },
+    ],
     siteName: "Logopedia Castelo",
     locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Logopedia Castelo | Logopedia en todas las etapas de la vida",
+    description:
+      "Clínica de logopedia en A Coruña. Especialistas en comunicación, desarrollo, daño cerebral y terapia miofuncional.",
+    images: ["/full_logo.png"],
   },
   alternates: {
     canonical: "/",
