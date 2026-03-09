@@ -49,7 +49,7 @@ function AreaCard({
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center gap-4 px-6 py-6 text-left"
+        className="flex w-full cursor-pointer items-center gap-4 px-6 py-6 text-left"
         aria-expanded={isOpen}
       >
         <span
