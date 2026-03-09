@@ -188,21 +188,7 @@ class _HeroSectionState extends State<HeroSection>
                                 SizedBox(
                                   height: (isMobile || isShort) ? 32 : 48,
                                 ),
-                                Semantics(
-                                  button: true,
-                                  label:
-                                      'Haga clic para descubrir más sobre nuestros servicios',
-                                  child: _AnimatedHeroButton(
-                                    onPressed: () {
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const ComingSoonScreen(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                ),
+                                
                               ],
                             ),
                           ),
