@@ -12,7 +12,7 @@ export const strings = {
 
   // About Section
   aboutTitle: "Filosofía",
-  aboutSubtitle: "¿Cómo te puedo ayudar?",
+  aboutSubtitle: "Tu clínica de logopedia de confianza en A Coruña",
   principle1Title: "Comunicándome",
   principle1Desc:
     "Escuchándote e informándote, atendiendo tus necesidades y haciendo un seguimiento de tus avances.",
@@ -22,6 +22,11 @@ export const strings = {
   principle3Title: "Comprometiéndome",
   principle3Desc:
     "Estableciendo un vínculo honesto, formándome y coordinándome con otros profesionales.",
+
+  // Testimonials Section
+  testimonialsTitle: "Vuestra voz",
+  testimonialsSubtitle: "Caminando juntos",
+  testimonialsIntro: "Reseñas de familias que han confiado en mi trabajo a lo largo de estos años (vía Doctoralia).",
 
   // Services Section
   servicesTitle: "Servicios",
@@ -141,6 +146,7 @@ export const strings = {
 
   // Deep Links
   urlTel: "tel:+34626929600",
+  urlWhatsapp: "https://wa.me/34626929600",
   urlMail: "mailto:hola@logopediacastelo.com",
   urlMaps: "https://maps.app.goo.gl/aVQbwSGL4xsJjpAEA",
   urlInsta: "https://www.instagram.com/logopediacastelo/",

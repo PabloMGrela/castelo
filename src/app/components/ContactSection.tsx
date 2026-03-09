@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { MdPhoneAndroid, MdAlternateEmail, MdMap, MdCameraAlt, MdFavorite } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
 import { strings } from "@/lib/strings";
 import type { IconType } from "react-icons";
 
@@ -12,6 +13,7 @@ const contacts: {
   content: string;
   subtitle: string;
   href: string;
+  whatsappHref?: string;
   label: string;
 }[] = [
   {
@@ -20,7 +22,8 @@ const contacts: {
     content: strings.contactPhoneVal,
     subtitle: strings.contactPhoneSub,
     href: strings.urlTel,
-    label: "Llamar por teléfono",
+    whatsappHref: strings.urlWhatsapp,
+    label: "Llamar o enviar WhatsApp",
   },
   {
     icon: MdAlternateEmail,
@@ -54,9 +57,48 @@ function ContactCard({
   content,
   subtitle,
   href,
+  whatsappHref,
   label,
 }: (typeof contacts)[0]) {
   const [hovered, setHovered] = useState(false);
+
+  if (whatsappHref) {
+    return (
+      <div
+        className={`flex w-full max-w-[280px] flex-col items-center rounded-[32px] border-[1.5px] px-6 py-12 text-center transition-all duration-300 ${
+          hovered
+            ? "border-secondary/50 bg-white/[0.12]"
+            : "border-white/10 bg-white/5"
+        }`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <div className="flex gap-4">
+          <a
+            href={href}
+            aria-label="Llamar por teléfono"
+            className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-secondary transition-all hover:bg-secondary hover:text-primary active:scale-95"
+          >
+            <Icon size={28} />
+          </a>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Enviar WhatsApp"
+            className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-secondary transition-all hover:bg-[#25D366] hover:text-white active:scale-95"
+          >
+            <FaWhatsapp size={28} />
+          </a>
+        </div>
+        <span className="mt-8 text-xs font-bold tracking-[2px] text-secondary/80 uppercase">
+          {title}
+        </span>
+        <span className="mt-4 text-lg font-bold text-white">{content}</span>
+        <span className="mt-2 text-sm text-white/50">{subtitle}</span>
+      </div>
+    );
+  }
 
   return (
     <a
@@ -142,4 +184,3 @@ export default function ContactSection() {
     </section>
   );
 }
-
