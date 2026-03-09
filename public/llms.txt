@@ -1,0 +1,39 @@
+# Logopedia Castelo - A Coruña
+
+Logopedia en todas las etapas de la vida. Clínica especializada en logopedia clínica para niños, adultos y personas mayores en A Coruña.
+
+## Contact Information
+- **Website:** https://logopediacastelo.com
+- **Instagram:** https://www.instagram.com/logopediacastelo/
+- **Phone:** +34 626 929 600
+- **Email:** hola@logopediacastelo.com
+- **Address:** Pr. da Gaiteira 2, Bajo dcha, 15006 A Coruña, Spain
+
+## Founder & Expert
+**Cristina Barrós Pérez**
+- Logopeda Colegiada nº 15-0360 (Galicia).
+- Diplomada en Logopedia (Universidade da Coruña).
+- Máster de Intervención Logopédica en infancia y adolescencia.
+- Máster en Terapia Miofuncional.
+- Posgrado en Atención Temprana.
+
+## Core Services
+1. **Estimulación Temprana (0-6 años):** Desarrollo del lenguaje, comunicación y deglución.
+2. **Dificultades de Aprendizaje:** Dislexia, TDAH, lectoescritura, razonamiento lógico.
+3. **Daño Cerebral Adquirido:** Rehabilitación tras ictus, traumatismos craneoencefálicos o tumores.
+4. **Terapia Miofuncional:** Corrección de hábitos de respiración, masticación y deglución (Disfagia).
+5. **Envejecimiento Activo:** Prevención de deterioro cognitivo, demencias y Parkinson.
+6. **Contexto Familiar:** Intervención centrada en el entorno educativo y familiar.
+
+## Local Relevance
+The clinic serves A Coruña, specifically the neighborhoods of:
+- Los Castros / Os Castros
+- Gaiteira
+- Cuatro Caminos
+- Matogrande
+- Eirís
+
+## Technical SEO Status
+- MedicalBusiness Schema implemented.
+- Mobile-optimized.
+- Priority given to evidence-based clinical logopedia.
