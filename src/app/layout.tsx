@@ -70,10 +70,8 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
-    types: {
-      "application/rss+xml": "https://www.instagram.com/logopediacastelo/",
-    },
   },
+  manifest: "/manifest.json",
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.png", apple: "/icons/Icon-192.png" },
 };
@@ -87,6 +85,8 @@ export default function RootLayout({
     <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <meta name="theme-color" content="#005422" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

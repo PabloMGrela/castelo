@@ -5,13 +5,13 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import ServicesSection from "./components/ServicesSection";
 import AreasSection from "./components/AreasSection";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
       <main>
-        <h1 className="sr-only">Logopedia Castelo | Clínica de Logopedia en A Coruña</h1>
         <HeroSection />
         <AboutSection />
         <ServicesSection />
@@ -19,6 +19,7 @@ export default function HomePage() {
         <TestimonialsSection />
         <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }

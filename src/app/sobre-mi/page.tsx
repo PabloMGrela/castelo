@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { MdSchool, MdGroups } from "react-icons/md";
 import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 import { strings } from "@/lib/strings";
+import { sobreMiBreadcrumb } from "@/lib/schema";
 import CvCard from "./CvCard";
 
 export const metadata: Metadata = {
@@ -21,6 +23,10 @@ export default function SobreMiPage() {
   return (
     <>
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sobreMiBreadcrumb) }}
+      />
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden bg-primary pt-[100px]" aria-label="Sobre mí">
@@ -100,6 +106,7 @@ export default function SobreMiPage() {
 
         <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }

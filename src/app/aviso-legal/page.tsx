@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Aviso Legal",
@@ -112,6 +113,7 @@ export default function AvisoLegalPage() {
 
         <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }

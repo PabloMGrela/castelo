@@ -115,8 +115,7 @@ export default function AreasSection() {
             {strings.areasTitle}
           </span>
           <h2 className="mt-6 font-[family-name:var(--font-playfair)] text-3xl font-extrabold text-text md:text-4xl">
-            <span className="sr-only">Áreas de Logopedia: </span>
-            {strings.areasSubtitle}
+{strings.areasSubtitle}
           </h2>
           <p className="mt-4 text-lg tracking-wider text-gray-500">
             {strings.areasIntro}

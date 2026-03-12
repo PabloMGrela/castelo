@@ -149,6 +149,6 @@ export const strings = {
   urlTel: "tel:+34626929600",
   urlWhatsapp: "https://wa.me/34626929600",
   urlMail: "mailto:hola@logopediacastelo.com",
-  urlMaps: "https://maps.app.goo.gl/aVQbwSGL4xsJjpAEA",
+  urlMaps: "https://maps.app.goo.gl/h7rwnnSk5qVcBSaq5",
   urlInsta: "https://www.instagram.com/logopediacastelo/",
 } as const;

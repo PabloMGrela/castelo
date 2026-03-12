@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

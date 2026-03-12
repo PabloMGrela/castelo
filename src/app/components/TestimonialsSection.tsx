@@ -1,5 +1,3 @@
-"use client";
-
 import { strings } from "@/lib/strings";
 import { MdStar } from "react-icons/md";
 
@@ -39,7 +37,7 @@ function TestimonialCard({ name, text }: { name: string; text: string }) {
         ))}
       </div>
       <p className="mt-6 flex-1 text-base leading-relaxed text-gray-700">
-        "{text}"
+        &ldquo;{text}&rdquo;
       </p>
       <div className="mt-8 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold">
@@ -60,7 +58,6 @@ export default function TestimonialsSection() {
             {strings.testimonialsTitle}
           </span>
           <h2 className="mt-6 font-[family-name:var(--font-playfair)] text-3xl font-extrabold text-text md:text-4xl">
-            <span className="sr-only">Opiniones Logopedia en A Coruña: </span>
             {strings.testimonialsSubtitle}
           </h2>
           <p className="mx-auto mt-6 max-w-[600px] text-base text-gray-500">

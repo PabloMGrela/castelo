@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
@@ -135,6 +136,7 @@ export default function PoliticaPrivacidadPage() {
 
         <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }

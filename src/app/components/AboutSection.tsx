@@ -1,5 +1,3 @@
-"use client";
-
 import { strings } from "@/lib/strings";
 import { MdChatBubbleOutline, MdFavoriteBorder, MdAutoAwesome } from "react-icons/md";
 import PrincipleCard from "./PrincipleCard";
@@ -25,10 +23,7 @@ const principles: { title: string; description: string; icon: IconType }[] = [
 
 export default function AboutSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-32" aria-label="Filosofía">
-      {/* Hidden SEO Keywords */}
-      <span className="sr-only">Logopedia en A Coruña: Los Castros, Os Castros, Gaiteira, Cuatro Caminos</span>
-      
+    <section id="metodologia" className="relative overflow-hidden bg-white py-32" aria-label="Metodología">
       {/* Decorative shape */}
       <div className="absolute -right-24 top-24 h-[400px] w-[400px] rotate-45 rounded-[80px] bg-primary/5" aria-hidden="true" />
 
@@ -38,7 +33,6 @@ export default function AboutSection() {
             {strings.aboutTitle}
           </span>
           <h2 className="mt-6 font-[family-name:var(--font-playfair)] text-3xl font-extrabold text-text md:text-4xl">
-            <span className="sr-only">Logopedia en A Coruña: </span>
             {strings.aboutSubtitle}
           </h2>
           <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-secondary" aria-hidden="true" />

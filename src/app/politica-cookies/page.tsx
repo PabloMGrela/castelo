@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Política de Cookies",
@@ -96,6 +97,7 @@ export default function PoliticaCookiesPage() {
 
         <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }
