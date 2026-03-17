@@ -152,8 +152,24 @@ export default function ContactSection() {
           {contacts.map((c) => (
             <ContactCard key={c.title} {...c} />
           ))}
-        </div>
 
+          {/* Google Maps Embed */}
+          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-sm md:col-span-2 w-full max-w-[280px] md:max-w-[600px]">
+            <div className="relative aspect-video w-full overflow-hidden rounded-[24px] sm:aspect-[21/9]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2901.104380704152!2d-8.39896952389876!3d43.35392717173566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x427a40f0d714f245%3A0x934b56d23010b6bf!2sLogopedia%20Castelo!5e0!3m2!1sen!2ses!4v1773761690890!5m2!1sen!2ses"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación de Logopedia Castelo en A Coruña"
+                className="grayscale-[20%] transition-all hover:grayscale-0"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

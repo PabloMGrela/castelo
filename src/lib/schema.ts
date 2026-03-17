@@ -92,6 +92,8 @@ export const jsonLd = {
       telephone: "+34626929600",
       email: "hola@logopediacastelo.com",
       priceRange: "Consultar",
+      paymentAccepted: "Efectivo, Bizum, Transferencia",
+      currenciesAccepted: "EUR",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Pr. da Gaiteira 2, Bajo dcha",
@@ -105,8 +107,7 @@ export const jsonLd = {
         latitude: 43.3539233,
         longitude: -8.3963946,
       },
-      hasMap:
-        "https://www.google.com/maps/place/Logopedia+Castelo/@43.3539243,-8.3970383,19z/data=!3m1!4b1!4m6!3m5!1s0x427a40f0d714f245:0x934b56d23010b6bf!8m2!3d43.3539233!4d-8.3963946",
+      hasMap: "https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A",
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -117,6 +118,7 @@ export const jsonLd = {
       sameAs: [
         "https://www.instagram.com/logopediacastelo/",
         "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna",
+        "https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A",
       ],
       description:
         "Clínica de logopedia especializada en estimulación temprana, dificultades de aprendizaje, daño cerebral adquirido y terapia miofuncional en A Coruña.",

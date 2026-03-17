@@ -26,7 +26,7 @@ export const strings = {
   // Testimonials Section
   testimonialsTitle: "Vuestra voz",
   testimonialsSubtitle: "Caminando juntos",
-  testimonialsIntro: "Reseñas de familias que han confiado en mi trabajo a lo largo de estos años (vía Doctoralia).",
+  testimonialsIntro: "Reseñas de familias que han confiado en mi trabajo a lo largo de estos años.",
 
   // Services Section
   servicesTitle: "Servicios",
