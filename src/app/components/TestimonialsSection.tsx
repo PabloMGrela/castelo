@@ -16,7 +16,7 @@ const testimonials = [
     name: "Marcos",
     text: "Encantadora, gran profesional. Explica todo lo que hace al final de la sesión. Muy recomendable.",
     source: "doctoralia",
-    url: "https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A",
+    url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Beatriz",
@@ -28,19 +28,19 @@ const testimonials = [
     name: "Sandra",
     text: "La niña le tiene mucho cariño y va encantada. Eso lo dice todo de la buena profesional que es.",
     source: "doctoralia",
-    url: "https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A",
+    url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Paula",
     text: "Muy atenta, excelente explicación y resolutiva. La atención es adaptada a las necesidades.",
     source: "doctoralia",
-    url: "https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A",
+    url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Ramiro",
     text: "Muy encantados, y en el peque se notan los cambios... ahora va encantado.",
     source: "doctoralia",
-    url: "https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A",
+    url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Cristina R.",
