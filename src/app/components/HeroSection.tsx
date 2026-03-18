@@ -6,15 +6,15 @@ import { strings } from "@/lib/strings";
 
 const heroImages = [
   {
-    src: "/photo1.jpg",
+    src: "/photo1.webp",
     alt: "Material didáctico y juegos de estimulación en Logopedia Castelo",
   },
   {
-    src: "/photo2.jpg",
+    src: "/photo2.webp",
     alt: "Interior de la clínica de logopedia en A Coruña",
   },
   {
-    src: "/photo3.png",
+    src: "/photo3.webp",
     alt: "Fachada exterior de Logopedia Castelo",
   },
 ];
@@ -56,7 +56,7 @@ export default function HeroSection() {
             i === current ? "opacity-100" : "opacity-0"
           }`}
         >
-          {loaded.has(i) && (
+          {(i === 0 || loaded.has(i)) && (
             <Image
               src={img.src}
               alt={img.alt}

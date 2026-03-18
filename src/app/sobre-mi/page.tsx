@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import { strings } from "@/lib/strings";
-import { sobreMiBreadcrumb } from "@/lib/schema";
+import { buildBreadcrumbs } from "@/lib/schema";
 import CvCard from "./CvCard";
 
 export const metadata: Metadata = {
@@ -26,7 +26,12 @@ export default function SobreMiPage() {
       <Navbar />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(sobreMiBreadcrumb) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildBreadcrumbs([
+            { name: "Inicio", url: "https://logopediacastelo.com/" },
+            { name: "Sobre mí", url: "https://logopediacastelo.com/sobre-mi" },
+          ]))
+        }}
       />
       <main>
         {/* Hero */}
@@ -59,7 +64,7 @@ export default function SobreMiPage() {
               <div className="relative mx-auto w-full max-w-[500px] lg:mx-0">
                 <div className="relative aspect-[3/4] overflow-hidden rounded-[40px] shadow-2xl">
                   <Image
-                    src="/aboutme.jpg"
+                    src="/aboutme.webp"
                     alt="Cristina Barrós Pérez - Logopeda"
                     fill
                     className="object-cover"

@@ -1,72 +1,3 @@
-const reviews = [
-  {
-    "@type": "Review" as const,
-    author: { "@type": "Person" as const, name: "Marcos" },
-    reviewRating: {
-      "@type": "Rating" as const,
-      ratingValue: 5,
-      bestRating: 5,
-    },
-    reviewBody:
-      "Encantadora, gran profesional. Explica todo lo que hace al final de la sesión. Muy recomendable.",
-  },
-  {
-    "@type": "Review" as const,
-    author: { "@type": "Person" as const, name: "Beatriz" },
-    reviewRating: {
-      "@type": "Rating" as const,
-      ratingValue: 5,
-      bestRating: 5,
-    },
-    reviewBody:
-      "Cristina fue muy empática en la explicación del tratamiento... Congenió muy bien con mi hijo y, además, puso en valor sus fortalezas.",
-  },
-  {
-    "@type": "Review" as const,
-    author: { "@type": "Person" as const, name: "Sandra" },
-    reviewRating: {
-      "@type": "Rating" as const,
-      ratingValue: 5,
-      bestRating: 5,
-    },
-    reviewBody:
-      "La niña le tiene mucho cariño y va encantada. Eso lo dice todo de la buena profesional que es.",
-  },
-  {
-    "@type": "Review" as const,
-    author: { "@type": "Person" as const, name: "Paula" },
-    reviewRating: {
-      "@type": "Rating" as const,
-      ratingValue: 5,
-      bestRating: 5,
-    },
-    reviewBody:
-      "Muy atenta, excelente explicación y resolutiva. La atención es adaptada a las necesidades.",
-  },
-  {
-    "@type": "Review" as const,
-    author: { "@type": "Person" as const, name: "Ramiro" },
-    reviewRating: {
-      "@type": "Rating" as const,
-      ratingValue: 5,
-      bestRating: 5,
-    },
-    reviewBody:
-      "Muy encantados, y en el peque se notan los cambios... ahora va encantado.",
-  },
-  {
-    "@type": "Review" as const,
-    author: { "@type": "Person" as const, name: "Cristina R." },
-    reviewRating: {
-      "@type": "Rating" as const,
-      ratingValue: 5,
-      bestRating: 5,
-    },
-    reviewBody:
-      "Cristina es muy amable. Buen profesional cercano y con buen trato.",
-  },
-];
-
 export const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -87,7 +18,10 @@ export const jsonLd = {
       logo: {
         "@type": "ImageObject",
         url: "https://logopediacastelo.com/icons/Icon-512.png",
+        width: 512,
+        height: 512,
       },
+      foundingDate: "2023",
       image: "https://logopediacastelo.com/icons/Icon-512.png",
       telephone: "+34626929600",
       email: "hola@logopediacastelo.com",
@@ -124,14 +58,6 @@ export const jsonLd = {
         "Clínica de logopedia especializada en estimulación temprana, dificultades de aprendizaje, daño cerebral adquirido y terapia miofuncional en A Coruña.",
       medicalSpecialty: "SpeechPathology",
       founder: { "@id": "https://logopediacastelo.com/#person-cristina" },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: 5,
-        reviewCount: 6,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      review: reviews,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Servicios de Logopedia",
@@ -198,6 +124,7 @@ export const jsonLd = {
       "@id": "https://logopediacastelo.com/#person-cristina",
       name: "Cristina Barrós Pérez",
       url: "https://logopediacastelo.com/sobre-mi",
+      image: "https://logopediacastelo.com/aboutme.webp",
       jobTitle: "Logopeda",
       description:
         "Logopeda colegiada nº 15-0360. Especialista en logopedia clínica para todas las etapas de la vida.",
@@ -252,36 +179,18 @@ export const jsonLd = {
         "Estimulación Cognitiva",
       ],
     },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://logopediacastelo.com/#breadcrumb-home",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Inicio",
-          item: "https://logopediacastelo.com/",
-        },
-      ],
-    },
   ],
 };
 
-export const sobreMiBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
+export function buildBreadcrumbs(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
-      position: 1,
-      name: "Inicio",
-      item: "https://logopediacastelo.com/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Sobre mí",
-      item: "https://logopediacastelo.com/sobre-mi",
-    },
-  ],
-};
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
