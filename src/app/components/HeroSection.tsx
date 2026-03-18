@@ -6,20 +6,16 @@ import { strings } from "@/lib/strings";
 
 const heroImages = [
   {
-    src: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1920&auto=format&fit=crop",
-    alt: "Niña sonriendo en sesión de estimulación temprana",
+    src: "/photo1.jpg",
+    alt: "Material didáctico y juegos de estimulación en Logopedia Castelo",
   },
   {
-    src: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=1920&auto=format&fit=crop",
-    alt: "Logopeda trabajando con materiales didácticos en A Coruña",
+    src: "/photo2.jpg",
+    alt: "Interior de la clínica de logopedia en A Coruña",
   },
   {
-    src: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?q=80&w=1920&auto=format&fit=crop",
-    alt: "Intervención logopédica infantil y juvenil",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1920&auto=format&fit=crop",
-    alt: "Terapia del lenguaje y comunicación para todas las edades",
+    src: "/photo3.png",
+    alt: "Fachada exterior de Logopedia Castelo",
   },
 ];
 

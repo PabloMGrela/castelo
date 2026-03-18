@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { MdSchool, MdGroups } from "react-icons/md";
 import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
@@ -53,16 +54,33 @@ export default function SobreMiPage() {
         {/* Bio */}
         <section className="relative overflow-hidden bg-white" aria-label="Biografía">
           <div className="absolute -left-24 top-20 h-[300px] w-[300px] rotate-45 rounded-[60px] bg-primary/[0.04]" aria-hidden="true" />
-          <div className="relative mx-auto max-w-[800px] px-6 py-24 md:px-16">
-            <p className="text-lg leading-[1.8] text-gray-700">
-              {strings.aboutMeBio1}
-            </p>
-            <p className="mt-7 text-lg leading-[1.8] text-gray-700">
-              {strings.aboutMeBio2}
-            </p>
-            <p className="mt-7 text-lg leading-[1.8] text-gray-700">
-              {strings.aboutMeBio3}
-            </p>
+          <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:px-16">
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-24">
+              <div className="relative mx-auto w-full max-w-[500px] lg:mx-0">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[40px] shadow-2xl">
+                  <Image
+                    src="/aboutme.jpg"
+                    alt="Cristina Barrós Pérez - Logopeda"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                {/* Decorative element behind image */}
+                <div className="absolute -bottom-6 -right-6 -z-10 h-full w-full rounded-[40px] bg-secondary/20" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-lg leading-[1.8] text-gray-700">
+                  {strings.aboutMeBio1}
+                </p>
+                <p className="mt-7 text-lg leading-[1.8] text-gray-700">
+                  {strings.aboutMeBio2}
+                </p>
+                <p className="mt-7 text-lg leading-[1.8] text-gray-700">
+                  {strings.aboutMeBio3}
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
