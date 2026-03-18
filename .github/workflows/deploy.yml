@@ -29,6 +29,9 @@ jobs:
         
       - name: Build Next.js
         run: npm run build
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ChIJRfIU1_BAekIRv7YQMNJWS5M
         
       - name: Copy CNAME to build output
         run: cp CNAME out/CNAME

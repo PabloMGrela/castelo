@@ -4,53 +4,48 @@ import { useEffect } from "react";
 import { strings } from "@/lib/strings";
 import { MdStar } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
+import type { GoogleReview } from "@/lib/google-reviews";
 
-const testimonials = [
-  {
-    name: "Sandra Deive",
-    text: "Cris es una gran profesional. Acudí a ella por un problema de deglución y con mucha empatía y amabilidad me explicó todo lo relativo al tratamiento a seguir y las pautas que debo tener en cuenta. Además, actualmente, realiza un seguimiento semanal conmigo para ver mi evolución y siempre está disponible para resolver mis dudas. Sin duda la recomiendo.",
-    source: "google",
-    url: "https://maps.app.goo.gl/uh5jkkFpi8nrx9YC7",
-  },
+const doctoraliaReviews = [
   {
     name: "Marcos",
     text: "Encantadora, gran profesional. Explica todo lo que hace al final de la sesión. Muy recomendable.",
-    source: "doctoralia",
+    source: "doctoralia" as const,
     url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Beatriz",
     text: "Cristina fue muy empática en la explicación del tratamiento... Congenió muy bien con mi hijo y, además, puso en valor sus fortalezas.",
-    source: "doctoralia",
+    source: "doctoralia" as const,
     url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Sandra",
     text: "La niña le tiene mucho cariño y va encantada. Eso lo dice todo de la buena profesional que es.",
-    source: "doctoralia",
+    source: "doctoralia" as const,
     url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Paula",
     text: "Muy atenta, excelente explicación y resolutiva. La atención es adaptada a las necesidades.",
-    source: "doctoralia",
+    source: "doctoralia" as const,
     url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Ramiro",
     text: "Muy encantados, y en el peque se notan los cambios... ahora va encantado.",
-    source: "doctoralia",
+    source: "doctoralia" as const,
     url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
   {
     name: "Cristina R.",
     text: "Cristina es muy amable. Buen profesional cercano y con buen trato.",
-    source: "doctoralia",
+    source: "doctoralia" as const,
     url: "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna#profile-reviews",
   },
 ];
 
-function TestimonialCard({ name, text, source, url }: { name: string; text: string; source: string; url: string }) {
+function TestimonialCard({ name, text, source, url, profilePhoto }: { name: string; text: string; source: string; url: string; profilePhoto?: string }) {
   return (
     <a
       href={url}
@@ -74,9 +69,20 @@ function TestimonialCard({ name, text, source, url }: { name: string; text: stri
         &ldquo;{text}&rdquo;
       </p>
       <div className="mt-8 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-sm">
-          {name.charAt(0)}
-        </div>
+        {profilePhoto ? (
+          <img
+            src={profilePhoto}
+            alt=""
+            width={40}
+            height={40}
+            className="h-10 w-10 rounded-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        ) : (
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-sm">
+            {name.charAt(0)}
+          </div>
+        )}
         <div>
           <span className="block font-bold text-text text-sm">{name}</span>
           <span className="block text-[10px] text-gray-400 uppercase tracking-widest font-medium">Paciente verificado</span>
@@ -86,7 +92,7 @@ function TestimonialCard({ name, text, source, url }: { name: string; text: stri
   );
 }
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ googleReviews = [] }: { googleReviews?: GoogleReview[] }) {
   useEffect(() => {
     // Inyectamos el cargador de Doctoralia
     // @ts-ignore
@@ -142,8 +148,11 @@ export default function TestimonialsSection() {
         {/* Horizontal Carousel */}
         <div className="mt-16 overflow-x-auto pb-12 no-scrollbar">
           <div className="flex gap-6 px-6 md:gap-8 md:px-16 w-max">
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.name} {...t} />
+            {googleReviews.map((t) => (
+              <TestimonialCard key={`g-${t.name}`} name={t.name} text={t.text} source="google" url={t.url} profilePhoto={t.profilePhoto} />
+            ))}
+            {doctoraliaReviews.map((t) => (
+              <TestimonialCard key={`d-${t.name}`} name={t.name} text={t.text} source={t.source} url={t.url} />
             ))}
           </div>
         </div>
