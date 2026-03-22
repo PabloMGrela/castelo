@@ -1,39 +1,31 @@
-# Logopedia Castelo - A Coruña
+# Logopedia Castelo
 
-Logopedia en todas las etapas de la vida. Clínica especializada en logopedia clínica para niños, adultos y personas mayores en A Coruña.
+> Clínica de logopedia en A Coruña, especializada en todas las etapas de la vida. Atención en castellano y en gallego.
 
-## Contact Information
-- **Website:** https://logopediacastelo.com
-- **Instagram:** https://www.instagram.com/logopediacastelo/
-- **Phone:** +34 626 929 600
+Logopedia Castelo es una clínica de logopedia clínica ubicada en la Pr. da Gaiteira 2, Bajo dcha, 15006 A Coruña (Galicia, España). Fue fundada por Cristina Barrós Pérez, logopeda colegiada nº 15-0360 en el Colexio de Logopedas de Galicia, con más de 13 años de experiencia. Las sesiones pueden realizarse en castellano o en gallego según la preferencia del paciente.
+
+## Servicios
+
+- [Estimulación Temprana del Lenguaje (0-6 años)](https://logopediacastelo.com/servicios/estimulacion-temprana): Intervención logopédica para niños de 0 a 6 años con retrasos del lenguaje, TEA, TDL u otras condiciones del desarrollo. Sesiones individuales semiestructuradas de 45 minutos con orientación familiar y coordinación con el entorno educativo.
+- [Dificultades del Aprendizaje y la Comunicación](https://logopediacastelo.com/servicios/dificultades-aprendizaje): Atención logopédica para niños en edad escolar y adultos con dislexia, TDAH, TDL, TEA, discalculia, disgrafía y afasias. Sesiones individuales de 45 minutos adaptadas a cada perfil.
+- [Terapia Miofuncional](https://logopediacastelo.com/servicios/terapia-miofuncional): Reeducación de la musculatura orofacial para tratar respiración oral, deglución atípica, disfagia, dislalias, tartamudez, afonías recurrentes y parálisis facial. Para todas las edades.
+- [Intervención en Contexto Educativo y Familiar](https://logopediacastelo.com/servicios/intervencion-familiar): Logopedia en el entorno natural del paciente — domicilio, colegio, parque, supermercado. Sesiones de 1 hora. Orientación in situ a la familia y al equipo docente.
+- [Talleres de Estimulación Cognitiva para Mayores](https://logopediacastelo.com/servicios/estimulacion-cognitiva): Talleres grupales de hasta 8 participantes para personas mayores sin deterioro cognitivo o con deterioro leve. Sesiones de 1 hora en horario de mañana (jueves). Primera entrevista previa gratuita.
+
+## Información práctica
+
+- [Tarifas y Horarios](https://logopediacastelo.com/tarifas): Sesión individual: 30 €/45 min. Intervención en contexto natural: 45 €/hora. Taller grupal de estimulación cognitiva: 20 €/hora. Horario: lunes a jueves de 15:45 a 20:15; jueves por la mañana de 10:00 a 12:15 (talleres). Pago al final de cada sesión en efectivo, Bizum o transferencia. Cancelaciones con 24 h de antelación.
+
+## Profesional
+
+- [Cristina Barrós Pérez — Sobre mí](https://logopediacastelo.com/sobre-mi): Logopeda colegiada nº 15-0360. Diplomada en Logopedia (Universidade da Coruña), Máster de Intervención Logopédica en infancia y adolescencia (UDC), Máster en Terapia Miofuncional (ISEP Madrid) y Posgrado en Atención Temprana (ISEP Madrid). Colegiada en el Colexio de Logopedas de Galicia. Más de 13 años de experiencia clínica. Atiende en castellano y en gallego.
+
+## Contacto
+
+- **Teléfono / WhatsApp:** +34 626 929 600
 - **Email:** hola@logopediacastelo.com
-- **Address:** Pr. da Gaiteira 2, Bajo dcha, 15006 A Coruña, Spain
-
-## Founder & Expert
-**Cristina Barrós Pérez**
-- Logopeda Colegiada nº 15-0360 (Galicia).
-- Diplomada en Logopedia (Universidade da Coruña).
-- Máster de Intervención Logopédica en infancia y adolescencia.
-- Máster en Terapia Miofuncional.
-- Posgrado en Atención Temprana.
-
-## Core Services
-1. **Estimulación Temprana (0-6 años):** Desarrollo del lenguaje, comunicación y deglución.
-2. **Dificultades de Aprendizaje:** Dislexia, TDAH, lectoescritura, razonamiento lógico.
-3. **Daño Cerebral Adquirido:** Rehabilitación tras ictus, traumatismos craneoencefálicos o tumores.
-4. **Terapia Miofuncional:** Corrección de hábitos de respiración, masticación y deglución (Disfagia).
-5. **Envejecimiento Activo:** Prevención de deterioro cognitivo, demencias y Parkinson.
-6. **Contexto Familiar:** Intervención centrada en el entorno educativo y familiar.
-
-## Local Relevance
-The clinic serves A Coruña, specifically the neighborhoods of:
-- Los Castros / Os Castros
-- Gaiteira
-- Cuatro Caminos
-- Matogrande
-- Eirís
-
-## Technical SEO Status
-- MedicalBusiness Schema implemented.
-- Mobile-optimized.
-- Priority given to evidence-based clinical logopedia.
+- **Dirección:** Pr. da Gaiteira 2, Bajo dcha, 15006 A Coruña
+- **Google Maps:** https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A
+- **Instagram:** https://www.instagram.com/logopediacastelo/
+- **Doctoralia:** https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna
+- **Registro sanitario:** C-15-005229
