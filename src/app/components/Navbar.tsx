@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -18,6 +18,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 50);
@@ -30,6 +31,7 @@ export default function Navbar() {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
+      closeButtonRef.current?.focus();
     } else {
       document.body.style.overflow = "";
     }
@@ -126,6 +128,7 @@ export default function Navbar() {
                 className="h-9 w-auto brightness-0 invert"
               />
               <button
+                ref={closeButtonRef}
                 onClick={() => setIsMenuOpen(false)}
                 aria-label="Cerrar menú"
               >

@@ -5,7 +5,7 @@ import { strings } from "@/lib/strings";
 const services = [
   {
     title: strings.service1Title,
-    icon: "/icons/baby-boy.png",
+    icon: "/icons/baby-boy.webp",
     alt: "Icono de estimulación temprana infantil",
     color: "bg-pink-50",
     tint: "hover:border-pink-400",
@@ -14,7 +14,7 @@ const services = [
   },
   {
     title: strings.service2Title,
-    icon: "/icons/mindset.png",
+    icon: "/icons/mindset.webp",
     alt: "Icono de dificultades del aprendizaje",
     color: "bg-blue-50",
     tint: "hover:border-blue-500",
@@ -23,7 +23,7 @@ const services = [
   },
   {
     title: strings.service3Title,
-    icon: "/icons/speak.png",
+    icon: "/icons/speak.webp",
     alt: "Icono de terapia miofuncional y voz",
     color: "bg-amber-50",
     tint: "hover:border-amber-500",
@@ -32,7 +32,7 @@ const services = [
   },
   {
     title: strings.service4Title,
-    icon: "/icons/family.png",
+    icon: "/icons/family.webp",
     alt: "Icono de intervención familiar y educativa",
     color: "bg-purple-50",
     tint: "hover:border-purple-500",
@@ -41,7 +41,7 @@ const services = [
   },
   {
     title: strings.service5Title,
-    icon: "/icons/aging.png",
+    icon: "/icons/aging.webp",
     alt: "Icono de estimulación cognitiva para mayores",
     color: "bg-green-50",
     tint: "hover:border-green-500",

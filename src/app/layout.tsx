@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "alzheimer",
     "envejecimiento",
   ],
-  authors: [{ name: "Logopedia Castelo" }],
+  authors: [{ name: "Cristina Barrós Pérez" }],
   openGraph: {
     type: "website",
     url: "https://logopediacastelo.com/",

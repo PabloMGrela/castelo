@@ -9,7 +9,7 @@ import { buildBreadcrumbs } from "@/lib/schema";
 import CvCard from "./CvCard";
 
 export const metadata: Metadata = {
-  title: "Sobre mí - Cristina Barrós Pérez",
+  title: "Cristina Barrós Pérez, Logopeda en A Coruña",
   description:
     "Cristina Barrós Pérez, logopeda colegiada nº 15-0360 con más de 13 años de experiencia. Especializada en Atención Temprana y Terapia Miofuncional. Atiende en castellano y en gallego en A Coruña.",
   alternates: { canonical: "/sobre-mi" },
@@ -69,6 +69,7 @@ export default function SobreMiPage() {
                     fill
                     className="object-cover"
                     priority
+                    sizes="(min-width: 1024px) 500px, 100vw"
                   />
                 </div>
                 {/* Decorative element behind image */}

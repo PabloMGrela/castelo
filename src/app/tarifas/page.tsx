@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
-import { buildBreadcrumbs } from "@/lib/schema";
+import { buildBreadcrumbsNode } from "@/lib/schema";
 import { MdAccessTime, MdEuroSymbol, MdCreditCard, MdEventBusy, MdAccessible, MdTranslate } from "react-icons/md";
 
 export const metadata: Metadata = {
@@ -56,16 +56,60 @@ export default function TarifasPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
-              buildBreadcrumbs([
+              buildBreadcrumbsNode([
                 { name: "Inicio", url: "https://logopediacastelo.com/" },
                 { name: "Tarifas", url: "https://logopediacastelo.com/tarifas" },
               ]),
               {
-                "@type": "PriceSpecification",
-                "@id": "https://logopediacastelo.com/tarifas#session",
+                "@type": "Service",
+                "@id": "https://logopediacastelo.com/tarifas#sesion-individual",
                 name: "Sesión individual de logopedia",
-                price: "30",
-                priceCurrency: "EUR",
+                provider: { "@id": "https://logopediacastelo.com/#organization" },
+                offers: {
+                  "@type": "Offer",
+                  price: "30",
+                  priceCurrency: "EUR",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "30",
+                    priceCurrency: "EUR",
+                    unitText: "por sesión de 45 minutos",
+                  },
+                },
+              },
+              {
+                "@type": "Service",
+                "@id": "https://logopediacastelo.com/tarifas#intervencion-natural",
+                name: "Intervención en contexto natural",
+                provider: { "@id": "https://logopediacastelo.com/#organization" },
+                offers: {
+                  "@type": "Offer",
+                  price: "45",
+                  priceCurrency: "EUR",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "45",
+                    priceCurrency: "EUR",
+                    unitText: "por sesión de 1 hora en contexto natural",
+                  },
+                },
+              },
+              {
+                "@type": "Service",
+                "@id": "https://logopediacastelo.com/tarifas#taller-cognitivo",
+                name: "Taller de estimulación cognitiva",
+                provider: { "@id": "https://logopediacastelo.com/#organization" },
+                offers: {
+                  "@type": "Offer",
+                  price: "20",
+                  priceCurrency: "EUR",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "20",
+                    priceCurrency: "EUR",
+                    unitText: "por sesión grupal de 1 hora",
+                  },
+                },
               },
             ],
           }),

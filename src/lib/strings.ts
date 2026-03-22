@@ -7,7 +7,7 @@ export const strings = {
   navContact: "Contacto",
 
   // Hero Section
-  heroTagline: "Logopedia en todas las etapas de la vida",
+  heroTagline: "Logopedia en todas las etapas de la vida en A Coruña",
   heroKeywords: "Comunicación · Cercanía · Compromiso",
 
   // About Section
@@ -122,7 +122,7 @@ export const strings = {
     },
   ],
   aboutMeExtra:
-    "Formaciones complementarias en Sistemas Aumentativos y Alternativos de Comunicación, rehabilitación en implantes auditivos, trastornos del neurodesarrollo y en trastornos del desarrollo psicomotor, entre otras.",
+    "Colegiada en el Colexio de Logopedas de Galicia (nº 15-0360). Formaciones complementarias en Sistemas Aumentativos y Alternativos de Comunicación, rehabilitación en implantes auditivos, trastornos del neurodesarrollo y en trastornos del desarrollo psicomotor, entre otras.",
   aboutMeWorkshops:
     "Impartición de talleres de memoria para la tercera edad en el concello de Carballo dentro de las actividades Remocea.",
 

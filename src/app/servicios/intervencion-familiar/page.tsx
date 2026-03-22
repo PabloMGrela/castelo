@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import ContactSection from "../../components/ContactSection";
 import Footer from "../../components/Footer";
-import { buildBreadcrumbs } from "@/lib/schema";
+import { buildBreadcrumbsNode } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Intervención en Contexto Educativo y Familiar",
@@ -24,10 +24,26 @@ const contexts = [
   "Observación en el entorno escolar",
 ];
 
+const otrosServicios = [
+  { href: "/servicios/estimulacion-temprana", label: "Estimulación Temprana" },
+  { href: "/servicios/dificultades-aprendizaje", label: "Dificultades del Aprendizaje" },
+  { href: "/servicios/terapia-miofuncional", label: "Terapia Miofuncional" },
+  { href: "/servicios/estimulacion-cognitiva", label: "Estimulación Cognitiva" },
+];
+
 export default function IntervencionFamiliarPage() {
   return (
     <>
       <Navbar />
+      <nav aria-label="Breadcrumb" className="fixed top-[100px] left-0 right-0 z-40 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+        <ol className="mx-auto flex max-w-[1200px] items-center gap-2 px-6 py-2 text-sm text-gray-500 md:px-16" role="list">
+          <li><a href="/" className="hover:text-primary transition-colors">Inicio</a></li>
+          <li aria-hidden="true" className="select-none">›</li>
+          <li><a href="/#servicios" className="hover:text-primary transition-colors">Servicios</a></li>
+          <li aria-hidden="true" className="select-none">›</li>
+          <li className="font-medium text-primary" aria-current="page">Intervención Familiar</li>
+        </ol>
+      </nav>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -47,8 +63,23 @@ export default function IntervencionFamiliarPage() {
                 },
                 serviceType: "Speech Therapy",
                 areaServed: { "@type": "City", name: "A Coruña" },
+                audience: {
+                  "@type": "Audience",
+                  audienceType: "Todas las edades",
+                },
+                offers: {
+                  "@type": "Offer",
+                  price: "45",
+                  priceCurrency: "EUR",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "45",
+                    priceCurrency: "EUR",
+                    unitText: "por sesión de 1 hora en contexto natural",
+                  },
+                },
               },
-              buildBreadcrumbs([
+              buildBreadcrumbsNode([
                 { name: "Inicio", url: "https://logopediacastelo.com/" },
                 {
                   name: "Servicios",
@@ -235,6 +266,17 @@ export default function IntervencionFamiliarPage() {
           </div>
         </section>
 
+        <div className="bg-white">
+          <div className="mx-auto max-w-[1200px] px-6 pb-6 md:px-16">
+            <p className="text-sm text-gray-500">
+              Contenido elaborado por{" "}
+              <a href="/sobre-mi" className="font-medium text-primary underline-offset-2 hover:underline">
+                Cristina Barrós Pérez, logopeda colegiada nº 15-0360
+              </a>
+            </p>
+          </div>
+        </div>
+
         {/* ── Las sesiones ── */}
         <section
           className="relative overflow-hidden bg-secondary/30"
@@ -283,6 +325,26 @@ export default function IntervencionFamiliarPage() {
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Otros servicios ── */}
+        <section className="bg-white" aria-labelledby="otros-servicios-heading">
+          <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-16">
+            <h2 id="otros-servicios-heading" className="text-sm font-bold tracking-[4px] text-primary uppercase mb-6">
+              Otros servicios
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {otrosServicios.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="rounded-full border border-primary/20 bg-primary/5 px-5 py-2.5 text-sm font-medium text-gray-800 transition-colors hover:bg-primary hover:text-white"
+                >
+                  {s.label}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

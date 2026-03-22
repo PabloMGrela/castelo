@@ -4,7 +4,7 @@ import { MdGroups } from "react-icons/md";
 import Navbar from "../../components/Navbar";
 import ContactSection from "../../components/ContactSection";
 import Footer from "../../components/Footer";
-import { buildBreadcrumbs } from "@/lib/schema";
+import { buildBreadcrumbsNode } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Dificultades del Aprendizaje y la Comunicación",
@@ -37,10 +37,26 @@ const warnings = [
   "Comprender lo que leéis",
 ];
 
+const otrosServicios = [
+  { href: "/servicios/estimulacion-temprana", label: "Estimulación Temprana" },
+  { href: "/servicios/terapia-miofuncional", label: "Terapia Miofuncional" },
+  { href: "/servicios/intervencion-familiar", label: "Intervención Familiar" },
+  { href: "/servicios/estimulacion-cognitiva", label: "Estimulación Cognitiva" },
+];
+
 export default function DificultadesAprendizajePage() {
   return (
     <>
       <Navbar />
+      <nav aria-label="Breadcrumb" className="fixed top-[100px] left-0 right-0 z-40 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+        <ol className="mx-auto flex max-w-[1200px] items-center gap-2 px-6 py-2 text-sm text-gray-500 md:px-16" role="list">
+          <li><a href="/" className="hover:text-primary transition-colors">Inicio</a></li>
+          <li aria-hidden="true" className="select-none">›</li>
+          <li><a href="/#servicios" className="hover:text-primary transition-colors">Servicios</a></li>
+          <li aria-hidden="true" className="select-none">›</li>
+          <li className="font-medium text-primary" aria-current="page">Dificultades del Aprendizaje</li>
+        </ol>
+      </nav>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -64,8 +80,19 @@ export default function DificultadesAprendizajePage() {
                   "@type": "Audience",
                   audienceType: "Edad escolar y adulta",
                 },
+                offers: {
+                  "@type": "Offer",
+                  price: "30",
+                  priceCurrency: "EUR",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "30",
+                    priceCurrency: "EUR",
+                    unitText: "por sesión de 45 minutos",
+                  },
+                },
               },
-              buildBreadcrumbs([
+              buildBreadcrumbsNode([
                 { name: "Inicio", url: "https://logopediacastelo.com/" },
                 {
                   name: "Servicios",
@@ -243,6 +270,17 @@ export default function DificultadesAprendizajePage() {
           </div>
         </section>
 
+        <div className="bg-white">
+          <div className="mx-auto max-w-[1200px] px-6 pb-6 md:px-16">
+            <p className="text-sm text-gray-500">
+              Contenido elaborado por{" "}
+              <a href="/sobre-mi" className="font-medium text-primary underline-offset-2 hover:underline">
+                Cristina Barrós Pérez, logopeda colegiada nº 15-0360
+              </a>
+            </p>
+          </div>
+        </div>
+
         {/* ── Cómo son las sesiones ── */}
         <section
           className="relative overflow-hidden bg-secondary/30"
@@ -306,7 +344,7 @@ export default function DificultadesAprendizajePage() {
               id="sospechas-heading"
               className="mt-6 font-[family-name:var(--font-playfair)] text-3xl font-extrabold text-gray-900 md:text-4xl"
             >
-              Si sospechas que tú o tu hij@ podéis tener dificultades para…
+              Si sospechas que tú o tu hijo o hija podéis tener dificultades para…
             </h2>
             <ul className="mt-12 flex flex-col gap-4" role="list">
               {warnings.map((w) => (
@@ -332,6 +370,26 @@ export default function DificultadesAprendizajePage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* ── Otros servicios ── */}
+        <section className="bg-white" aria-labelledby="otros-servicios-heading">
+          <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-16">
+            <h2 id="otros-servicios-heading" className="text-sm font-bold tracking-[4px] text-primary uppercase mb-6">
+              Otros servicios
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {otrosServicios.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="rounded-full border border-primary/20 bg-primary/5 px-5 py-2.5 text-sm font-medium text-gray-800 transition-colors hover:bg-primary hover:text-white"
+                >
+                  {s.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

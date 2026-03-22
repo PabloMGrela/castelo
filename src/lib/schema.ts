@@ -25,7 +25,7 @@ export const jsonLd = {
       image: "https://logopediacastelo.com/icons/Icon-512.png",
       telephone: "+34626929600",
       email: "hola@logopediacastelo.com",
-      priceRange: "Consultar",
+      priceRange: "20€–45€",
       paymentAccepted: "Efectivo, Bizum, Transferencia",
       currenciesAccepted: "EUR",
       address: {
@@ -42,12 +42,27 @@ export const jsonLd = {
         longitude: -8.3963946,
       },
       hasMap: "https://maps.app.goo.gl/DkPCiTAAnk8s4Bh1A",
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "15:45",
-        closes: "20:15",
-      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          opens: "15:45",
+          closes: "20:15",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Thursday"],
+          opens: "10:00",
+          closes: "12:15",
+        },
+      ],
+      amenityFeature: [
+        {
+          "@type": "LocationFeatureSpecification",
+          name: "Acceso para sillas de ruedas",
+          value: true,
+        },
+      ],
       areaServed: { "@type": "City", name: "A Coruña" },
       sameAs: [
         "https://www.instagram.com/logopediacastelo/",
@@ -58,6 +73,14 @@ export const jsonLd = {
         "Clínica de logopedia especializada en estimulación temprana, dificultades de aprendizaje, daño cerebral adquirido y terapia miofuncional en A Coruña.",
       medicalSpecialty: "SpeechPathology",
       founder: { "@id": "https://logopediacastelo.com/#person-cristina" },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.96",
+        bestRating: "5",
+        worstRating: "1",
+        ratingCount: "25",
+        reviewCount: "25",
+      },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Servicios de Logopedia",
@@ -68,9 +91,7 @@ export const jsonLd = {
             description:
               "Estimulación temprana del lenguaje y del desarrollo entre los 0 y los 6 años.",
             url: "https://logopediacastelo.com/servicios/estimulacion-temprana",
-            provider: {
-              "@id": "https://logopediacastelo.com/#organization",
-            },
+            provider: { "@id": "https://logopediacastelo.com/#organization" },
             serviceType: "Speech Therapy",
           },
           {
@@ -79,9 +100,7 @@ export const jsonLd = {
             description:
               "Atención logopédica de las dificultades del aprendizaje y de la comunicación en edad escolar y adulta.",
             url: "https://logopediacastelo.com/servicios/dificultades-aprendizaje",
-            provider: {
-              "@id": "https://logopediacastelo.com/#organization",
-            },
+            provider: { "@id": "https://logopediacastelo.com/#organization" },
             serviceType: "Speech Therapy",
           },
           {
@@ -90,9 +109,7 @@ export const jsonLd = {
             description:
               "Terapia miofuncional de la respiración, masticación, deglución y voz.",
             url: "https://logopediacastelo.com/servicios/terapia-miofuncional",
-            provider: {
-              "@id": "https://logopediacastelo.com/#organization",
-            },
+            provider: { "@id": "https://logopediacastelo.com/#organization" },
             serviceType: "Myofunctional Therapy",
           },
           {
@@ -100,9 +117,7 @@ export const jsonLd = {
             name: "Intervención en Contexto Educativo y Familiar",
             description: "Intervención en contexto educativo y familiar.",
             url: "https://logopediacastelo.com/servicios/intervencion-familiar",
-            provider: {
-              "@id": "https://logopediacastelo.com/#organization",
-            },
+            provider: { "@id": "https://logopediacastelo.com/#organization" },
             serviceType: "Speech Therapy",
           },
           {
@@ -111,9 +126,7 @@ export const jsonLd = {
             description:
               "Talleres de estimulación cognitiva y prevención del deterioro en la tercera edad.",
             url: "https://logopediacastelo.com/servicios/estimulacion-cognitiva",
-            provider: {
-              "@id": "https://logopediacastelo.com/#organization",
-            },
+            provider: { "@id": "https://logopediacastelo.com/#organization" },
             serviceType: "Cognitive Stimulation",
           },
         ],
@@ -129,8 +142,29 @@ export const jsonLd = {
       description:
         "Logopeda colegiada nº 15-0360. Especialista en logopedia clínica para todas las etapas de la vida.",
       worksFor: { "@id": "https://logopediacastelo.com/#organization" },
+      memberOf: {
+        "@type": "Organization",
+        name: "Colexio de Logopedas de Galicia",
+        url: "https://www.cologaes.org",
+      },
       sameAs: [
         "https://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna",
+      ],
+      knowsLanguage: [
+        { "@type": "Language", name: "Español", alternateName: "es" },
+        { "@type": "Language", name: "Galego", alternateName: "gl" },
+      ],
+      alumniOf: [
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Universidade da Coruña",
+          url: "https://www.udc.es",
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Instituto Superior de Estudios Psicológicos de Madrid",
+          url: "https://www.isep.es",
+        },
       ],
       hasCredential: [
         {
@@ -185,6 +219,18 @@ export const jsonLd = {
 export function buildBreadcrumbs(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildBreadcrumbsNode(items: { name: string; url: string }[]) {
+  return {
     "@type": "BreadcrumbList",
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",

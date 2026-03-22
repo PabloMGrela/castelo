@@ -51,10 +51,9 @@ export default function PoliticaCookiesPage() {
               3. Cookies de terceros
             </h2>
             <p>
-              Las imágenes del sitio web se cargan desde servidores externos
-              (Unsplash). Estos servicios podrían establecer sus propias cookies
-              según sus respectivas políticas de privacidad. Le recomendamos
-              consultar las políticas de estos proveedores.
+              Este sitio web no carga recursos desde servidores de terceros que
+              instalen cookies. Todas las imágenes y activos se sirven desde los
+              propios servidores de logopediacastelo.com.
             </p>
 
             <h2 className="!mt-12 text-2xl font-bold text-text">
