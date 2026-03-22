@@ -15,6 +15,10 @@ export default function Footer() {
             Aviso Legal
           </Link>
           <span aria-hidden="true">·</span>
+          <Link href="/tarifas" className="transition-colors hover:text-white/70">
+            Tarifas y Horarios
+          </Link>
+          <span aria-hidden="true">·</span>
           <Link href="/politica-privacidad" className="transition-colors hover:text-white/70">
             Política de Privacidad
           </Link>

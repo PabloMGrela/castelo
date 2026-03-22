@@ -7,9 +7,10 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Inicio", href: "/#inicio" },
-  { label: "Metodología", href: "/#metodologia" },
   { label: "Servicios", href: "/#servicios" },
   { label: "Áreas de intervención", href: "/#areas" },
+  { label: "Metodología", href: "/#metodologia" },
+  { label: "Tarifas", href: "/tarifas" },
   { label: "Sobre mí", href: "/sobre-mi" },
 ];
 

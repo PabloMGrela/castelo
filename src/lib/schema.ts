@@ -67,7 +67,7 @@ export const jsonLd = {
             name: "Estimulación Temprana del Lenguaje",
             description:
               "Estimulación temprana del lenguaje y del desarrollo entre los 0 y los 6 años.",
-            url: "https://logopediacastelo.com/#servicios",
+            url: "https://logopediacastelo.com/servicios/estimulacion-temprana",
             provider: {
               "@id": "https://logopediacastelo.com/#organization",
             },
@@ -78,7 +78,7 @@ export const jsonLd = {
             name: "Dificultades del Aprendizaje y Comunicación",
             description:
               "Atención logopédica de las dificultades del aprendizaje y de la comunicación en edad escolar y adulta.",
-            url: "https://logopediacastelo.com/#servicios",
+            url: "https://logopediacastelo.com/servicios/dificultades-aprendizaje",
             provider: {
               "@id": "https://logopediacastelo.com/#organization",
             },
@@ -89,7 +89,7 @@ export const jsonLd = {
             name: "Terapia Miofuncional",
             description:
               "Terapia miofuncional de la respiración, masticación, deglución y voz.",
-            url: "https://logopediacastelo.com/#servicios",
+            url: "https://logopediacastelo.com/servicios/terapia-miofuncional",
             provider: {
               "@id": "https://logopediacastelo.com/#organization",
             },
@@ -99,7 +99,7 @@ export const jsonLd = {
             "@type": "Service",
             name: "Intervención en Contexto Educativo y Familiar",
             description: "Intervención en contexto educativo y familiar.",
-            url: "https://logopediacastelo.com/#servicios",
+            url: "https://logopediacastelo.com/servicios/intervencion-familiar",
             provider: {
               "@id": "https://logopediacastelo.com/#organization",
             },
@@ -110,7 +110,7 @@ export const jsonLd = {
             name: "Estimulación Cognitiva para la Tercera Edad",
             description:
               "Talleres de estimulación cognitiva y prevención del deterioro en la tercera edad.",
-            url: "https://logopediacastelo.com/#servicios",
+            url: "https://logopediacastelo.com/servicios/estimulacion-cognitiva",
             provider: {
               "@id": "https://logopediacastelo.com/#organization",
             },

@@ -16,9 +16,9 @@ export default async function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
-        <AboutSection />
         <ServicesSection />
         <AreasSection />
+        <AboutSection />
         <TestimonialsSection googleReviews={googleReviews} />
         <ContactSection />
       </main>

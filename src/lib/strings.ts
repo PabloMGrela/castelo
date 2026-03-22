@@ -98,7 +98,7 @@ export const strings = {
   aboutMeBio1:
     "Supe que quería ser logopeda en cuanto leí el nombre de la carrera. Fue una suerte de amor a primera vista.",
   aboutMeBio2:
-    "Desde que terminé la carrera hasta ahora, he tenido la fortuna de trabajar de lo quiero y se me da bien, aquí, en A Coruña, en Santiago de Compostela y en Carballo.",
+    "Estoy especializada en Atención Temprana y en Terapia Miofuncional, aunque a lo largo de mis más de trece años de experiencia he podido trabajar con pacientes de todas las edades con dificultades en la respiración, la masticación, la deglución y la comunicación —gestual, oral y escrita—.",
   aboutMeBio3:
     "Ahora, gracias a la ayuda y motivación de los míos, tengo mi propio proyecto, Castelo, en el que pongo toda mi dedicación e ilusión.",
   aboutMeCvTitle: "Mi currículum",

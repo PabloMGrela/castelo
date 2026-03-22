@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { strings } from "@/lib/strings";
 
 const services = [
@@ -9,6 +10,7 @@ const services = [
     color: "bg-pink-50",
     tint: "hover:border-pink-400",
     shadow: "hover:shadow-pink-200/40",
+    href: "/servicios/estimulacion-temprana",
   },
   {
     title: strings.service2Title,
@@ -17,6 +19,7 @@ const services = [
     color: "bg-blue-50",
     tint: "hover:border-blue-500",
     shadow: "hover:shadow-blue-200/40",
+    href: "/servicios/dificultades-aprendizaje",
   },
   {
     title: strings.service3Title,
@@ -25,6 +28,7 @@ const services = [
     color: "bg-amber-50",
     tint: "hover:border-amber-500",
     shadow: "hover:shadow-amber-200/40",
+    href: "/servicios/terapia-miofuncional",
   },
   {
     title: strings.service4Title,
@@ -33,6 +37,7 @@ const services = [
     color: "bg-purple-50",
     tint: "hover:border-purple-500",
     shadow: "hover:shadow-purple-200/40",
+    href: "/servicios/intervencion-familiar",
   },
   {
     title: strings.service5Title,
@@ -41,6 +46,7 @@ const services = [
     color: "bg-green-50",
     tint: "hover:border-green-500",
     shadow: "hover:shadow-green-200/40",
+    href: "/servicios/estimulacion-cognitiva",
   },
 ];
 
@@ -51,11 +57,10 @@ function ServiceCard({
   color,
   tint,
   shadow,
+  href,
 }: (typeof services)[0]) {
-  return (
-    <article
-      className={`group flex w-full max-w-[320px] flex-col items-center rounded-[32px] border-2 border-transparent bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_20px_40px] ${tint} ${shadow}`}
-    >
+  const inner = (
+    <>
       <div
         className={`flex h-[120px] w-[120px] items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 ${color}`}
       >
@@ -64,6 +69,27 @@ function ServiceCard({
       <h3 className="mt-10 text-center text-base font-semibold leading-relaxed text-text">
         {title}
       </h3>
+      {href && (
+        <span className="mt-4 text-xs font-semibold tracking-widest text-primary uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          Saber más →
+        </span>
+      )}
+    </>
+  );
+
+  const className = `group flex w-full max-w-[320px] flex-col items-center rounded-[32px] border-2 border-transparent bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_20px_40px] ${tint} ${shadow}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={className}>
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <article className={className}>
+      {inner}
     </article>
   );
 }

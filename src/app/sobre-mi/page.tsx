@@ -11,7 +11,7 @@ import CvCard from "./CvCard";
 export const metadata: Metadata = {
   title: "Sobre mí - Cristina Barrós Pérez",
   description:
-    "Cristina Barrós Pérez, logopeda colegiada nº 15-0360. Diplomada en Logopedia por la Universidade da Coruña. Especialista en logopedia clínica en A Coruña.",
+    "Cristina Barrós Pérez, logopeda colegiada nº 15-0360 con más de 13 años de experiencia. Especializada en Atención Temprana y Terapia Miofuncional. Atiende en castellano y en gallego en A Coruña.",
   alternates: { canonical: "/sobre-mi" },
   openGraph: {
     title: "Sobre mí - Cristina Barrós Pérez | Logopedia Castelo",

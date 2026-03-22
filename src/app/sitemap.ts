@@ -19,6 +19,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/tarifas`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/estimulacion-temprana`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/servicios/dificultades-aprendizaje`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/servicios/terapia-miofuncional`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/servicios/intervencion-familiar`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/servicios/estimulacion-cognitiva`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/aviso-legal`,
       lastModified: new Date("2026-03-09"),
       changeFrequency: "yearly",
