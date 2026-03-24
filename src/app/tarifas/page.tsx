@@ -41,8 +41,8 @@ const prices = [
   {
     label: "Taller de estimulación cognitiva",
     duration: "1 hora",
-    price: "20 €",
-    note: "Sesiones grupales de hasta 8 participantes. Horario de mañana (jueves).",
+    price: "50 €/mes",
+    note: "Sesiones grupales de entre 3 y 8 participantes. Jueves por la mañana. (Consultar disponibilidad de otros horarios)",
   },
 ];
 
