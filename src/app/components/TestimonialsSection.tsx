@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { strings } from "@/lib/strings";
 import { MdStar } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
@@ -93,6 +93,9 @@ function TestimonialCard({ name, text, source, url, profilePhoto }: { name: stri
 }
 
 export default function TestimonialsSection({ googleReviews = [] }: { googleReviews?: GoogleReview[] }) {
+  const widgetContainerRef = useRef<HTMLDivElement>(null);
+  const [widgetState, setWidgetState] = useState<"loading" | "loaded" | "failed">("loading");
+
   useEffect(() => {
     // Inyectamos el cargador de Doctoralia
     // @ts-ignore
@@ -105,11 +108,37 @@ export default function TestimonialsSection({ googleReviews = [] }: { googleRevi
         // @ts-ignore
         fjs.parentNode.insertBefore(js, fjs);
       } else {
-        // Si ya existe, forzamos re-inicialización
         // @ts-ignore
         if (window.ZlWidget) window.ZlWidget.init();
       }
     })(document, "script", "zl-widget-s");
+
+    // MutationObserver: detecta cuando Doctoralia reemplaza el <a> con el widget
+    const observer = new MutationObserver(() => {
+      const anchor = document.getElementById("zl-url");
+      if (!anchor || anchor.tagName !== "A") {
+        setWidgetState("loaded");
+        observer.disconnect();
+      }
+    });
+
+    if (widgetContainerRef.current) {
+      observer.observe(widgetContainerRef.current, { childList: true, subtree: true });
+    }
+
+    // Fallback: si en 5s el widget sigue sin cargar, ocultamos la sección
+    const timeout = setTimeout(() => {
+      const anchor = document.getElementById("zl-url");
+      if (anchor && anchor.tagName === "A") {
+        setWidgetState("failed");
+        observer.disconnect();
+      }
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeout);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -128,22 +157,33 @@ export default function TestimonialsSection({ googleReviews = [] }: { googleRevi
         </div>
 
         {/* Doctoralia Widget */}
-        <div className="mt-16 flex justify-center px-6 min-h-[300px]">
-          <a
-            id="zl-url"
-            className="zl-url inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-bold text-white shadow-md transition-all hover:opacity-90 hover:shadow-lg"
-            href="http://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna"
-            rel="nofollow"
-            data-zlw-doctor="cristina-barros-perez"
-            data-zlw-type="big"
-            data-zlw-opinion="true"
-            data-zlw-hide-branding="true"
-            data-zlw-saas-only="false"
-            data-zlw-a11y-title="Widget de reserva de citas médicas"
-          >
-            Reserve una cita
-          </a>
-        </div>
+        {widgetState !== "failed" && (
+          <div ref={widgetContainerRef} className="relative mt-16 flex min-h-[300px] items-center justify-center px-6">
+            {/* Loader visible solo mientras carga */}
+            {widgetState === "loading" && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4" aria-hidden="true">
+                <div className="h-10 w-10 rounded-full border-2 border-primary/20 border-t-primary animate-spin" />
+                <span className="text-xs font-medium tracking-widest text-primary/50 uppercase">Cargando</span>
+              </div>
+            )}
+            {/* El <a> debe estar en el DOM para que Doctoralia lo inicialice */}
+            <a
+              id="zl-url"
+              className="zl-url"
+              style={{ opacity: 0, pointerEvents: "none", position: "absolute" }}
+              href="http://www.doctoralia.es/cristina-barros-perez/logopeda/a-coruna"
+              rel="nofollow"
+              data-zlw-doctor="cristina-barros-perez"
+              data-zlw-type="big"
+              data-zlw-opinion="true"
+              data-zlw-hide-branding="true"
+              data-zlw-saas-only="false"
+              data-zlw-a11y-title="Widget de reserva de citas médicas"
+            >
+              Reserve una cita
+            </a>
+          </div>
+        )}
 
         {/* Horizontal Carousel */}
         <div className="mt-16 overflow-x-auto pb-12 no-scrollbar">
