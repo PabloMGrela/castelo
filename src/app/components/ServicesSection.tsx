@@ -70,14 +70,14 @@ function ServiceCard({
         {title}
       </h3>
       {href && (
-        <span className="mt-4 text-xs font-semibold tracking-widest text-primary uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <span className="mt-4 text-xs font-semibold tracking-widest text-primary uppercase transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
           Saber más →
         </span>
       )}
     </>
   );
 
-  const className = `group flex w-full max-w-[320px] flex-col items-center rounded-[32px] border-2 border-transparent bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_20px_40px] ${tint} ${shadow}`;
+  const className = `group flex w-full max-w-[320px] flex-col items-center rounded-[32px] border-2 border-transparent bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_20px_40px] active:scale-[0.97] ${tint} ${shadow}`;
 
   if (href) {
     return (
