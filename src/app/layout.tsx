@@ -85,6 +85,11 @@ export default function RootLayout({
     <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <meta name="theme-color" content="#005422" />
+        <meta name="geo.region" content="ES-GA" />
+        <meta name="geo.placename" content="A Coruña" />
+        <meta name="geo.position" content="43.3539233;-8.3963946" />
+        <meta name="ICBM" content="43.3539233, -8.3963946" />
+        <link rel="alternate" hrefLang="es-ES" href="https://logopediacastelo.com/" />
         <link rel="alternate" type="text/plain" href="/llms.txt" />
         <script
           type="application/ld+json"

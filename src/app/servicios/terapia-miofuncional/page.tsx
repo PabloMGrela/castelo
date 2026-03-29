@@ -10,11 +10,36 @@ export const metadata: Metadata = {
   title: "Terapia Miofuncional en A Coruña",
   description:
     "Terapia Miofuncional en A Coruña para todas las edades. Tratamiento de desequilibrios musculares orofaciales: respiración oral, deglución atípica, afonías, parálisis facial y más.",
+  keywords: [
+    "terapia miofuncional A Coruña",
+    "logopeda deglución atípica",
+    "respiración oral tratamiento",
+    "logopeda tartamudez",
+    "disfagia logopeda",
+    "disfonía logopeda A Coruña",
+    "parálisis facial logopedia",
+  ],
   alternates: { canonical: "/servicios/terapia-miofuncional" },
   openGraph: {
     title: "Terapia Miofuncional | Logopedia Castelo",
     description:
       "Logopedia especializada en terapia miofuncional en A Coruña. Respiración, masticación, deglución y voz para todas las edades.",
+    url: "https://logopediacastelo.com/servicios/terapia-miofuncional",
+    images: [
+      {
+        url: "https://logopediacastelo.com/full_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Terapia Miofuncional - Logopedia Castelo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terapia Miofuncional en A Coruña | Logopedia Castelo",
+    description:
+      "Reeducación de la musculatura orofacial para respiración, masticación, deglución y voz en A Coruña.",
+    images: ["https://logopediacastelo.com/full_logo.png"],
   },
 };
 
@@ -65,6 +90,18 @@ export default function TerapiaMiofuncionalPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebPage",
+                "@id":
+                  "https://logopediacastelo.com/servicios/terapia-miofuncional#webpage",
+                url: "https://logopediacastelo.com/servicios/terapia-miofuncional",
+                name: "Terapia Miofuncional en A Coruña | Logopedia Castelo",
+                description:
+                  "Terapia Miofuncional para todas las edades en A Coruña.",
+                isPartOf: { "@id": "https://logopediacastelo.com/#website" },
+                about: { "@id": "https://logopediacastelo.com/#organization" },
+                inLanguage: "es",
+              },
               {
                 "@type": "Service",
                 "@id":

@@ -10,11 +10,34 @@ export const metadata: Metadata = {
   title: "Tarifas y Horarios | Logopedia Castelo",
   description:
     "Precios y horarios de los servicios de logopedia en A Coruña. Sesiones individuales desde 30 €, talleres grupales desde 20 €. Pago en efectivo, bizum o transferencia.",
+  keywords: [
+    "tarifas logopedia A Coruña",
+    "precio logopeda",
+    "horario logopeda A Coruña",
+    "coste sesión logopedia",
+    "logopedia precio",
+  ],
   alternates: { canonical: "/tarifas" },
   openGraph: {
     title: "Tarifas y Horarios | Logopedia Castelo",
     description:
       "Consulta los precios y horarios de Logopedia Castelo en A Coruña. Sesiones individuales, intervención en contexto natural y talleres de estimulación cognitiva.",
+    url: "https://logopediacastelo.com/tarifas",
+    images: [
+      {
+        url: "https://logopediacastelo.com/full_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Tarifas y Horarios - Logopedia Castelo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tarifas y Horarios | Logopedia Castelo",
+    description:
+      "Precios y horarios de logopedia en A Coruña. Sesiones desde 30 €.",
+    images: ["https://logopediacastelo.com/full_logo.png"],
   },
 };
 
@@ -56,6 +79,17 @@ export default function TarifasPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": "https://logopediacastelo.com/tarifas#webpage",
+                url: "https://logopediacastelo.com/tarifas",
+                name: "Tarifas y Horarios | Logopedia Castelo",
+                description:
+                  "Precios y horarios de los servicios de logopedia en A Coruña.",
+                isPartOf: { "@id": "https://logopediacastelo.com/#website" },
+                about: { "@id": "https://logopediacastelo.com/#organization" },
+                inLanguage: "es",
+              },
               buildBreadcrumbsNode([
                 { name: "Inicio", url: "https://logopediacastelo.com/" },
                 { name: "Tarifas", url: "https://logopediacastelo.com/tarifas" },

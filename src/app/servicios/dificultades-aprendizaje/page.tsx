@@ -10,11 +10,36 @@ export const metadata: Metadata = {
   title: "Dificultades del Aprendizaje y la Comunicación",
   description:
     "Atención logopédica especializada para dificultades del aprendizaje y la comunicación en edad escolar y adulta en A Coruña. Dislexia, TEA, TDL, TDAH, afasias y más.",
+  keywords: [
+    "dificultades aprendizaje logopedia",
+    "logopeda dislexia A Coruña",
+    "logopeda TDAH",
+    "logopeda TEA A Coruña",
+    "afasia logopeda",
+    "TDL logopedia",
+    "logopedia escolar",
+  ],
   alternates: { canonical: "/servicios/dificultades-aprendizaje" },
   openGraph: {
     title: "Dificultades del Aprendizaje y la Comunicación | Logopedia Castelo",
     description:
       "Intervención logopédica personalizada para dificultades del aprendizaje y la comunicación en A Coruña. Evaluación y tratamiento para todas las edades.",
+    url: "https://logopediacastelo.com/servicios/dificultades-aprendizaje",
+    images: [
+      {
+        url: "https://logopediacastelo.com/full_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Dificultades del Aprendizaje y la Comunicación - Logopedia Castelo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dificultades del Aprendizaje y la Comunicación | Logopedia Castelo",
+    description:
+      "Logopedia para dislexia, TDAH, TEA y otras dificultades del aprendizaje en A Coruña.",
+    images: ["https://logopediacastelo.com/full_logo.png"],
   },
 };
 
@@ -63,6 +88,18 @@ export default function DificultadesAprendizajePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebPage",
+                "@id":
+                  "https://logopediacastelo.com/servicios/dificultades-aprendizaje#webpage",
+                url: "https://logopediacastelo.com/servicios/dificultades-aprendizaje",
+                name: "Dificultades del Aprendizaje y la Comunicación | Logopedia Castelo",
+                description:
+                  "Atención logopédica especializada para dificultades del aprendizaje y la comunicación en A Coruña.",
+                isPartOf: { "@id": "https://logopediacastelo.com/#website" },
+                about: { "@id": "https://logopediacastelo.com/#organization" },
+                inLanguage: "es",
+              },
               {
                 "@type": "Service",
                 "@id":
