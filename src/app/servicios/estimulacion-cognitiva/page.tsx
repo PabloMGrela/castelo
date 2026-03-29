@@ -9,12 +9,36 @@ export const metadata: Metadata = {
   title: "Talleres de Estimulación Cognitiva para Mayores | Logopedia Castelo",
   description:
     "Talleres grupales de estimulación cognitiva en A Coruña para mayores sin deterioro o con deterioro leve. Memoria, atención, lenguaje y socialización en un entorno cercano.",
+  keywords: [
+    "estimulación cognitiva mayores A Coruña",
+    "talleres memoria tercera edad",
+    "logopedia mayores",
+    "deterioro cognitivo leve logopeda",
+    "taller memoria A Coruña",
+    "Alzheimer prevención logopedia",
+  ],
   alternates: { canonical: "/servicios/estimulacion-cognitiva" },
   openGraph: {
     title:
       "Talleres de Estimulación Cognitiva para Mayores | Logopedia Castelo",
     description:
       "Sesiones grupales de hasta 8 personas para mantener la mente activa, estimular el lenguaje y socializar. Primera entrevista previa gratuita para encontrarte el grupo ideal.",
+    url: "https://logopediacastelo.com/servicios/estimulacion-cognitiva",
+    images: [
+      {
+        url: "https://logopediacastelo.com/full_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Talleres de Estimulación Cognitiva para Mayores - Logopedia Castelo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Talleres de Estimulación Cognitiva para Mayores | Logopedia Castelo",
+    description:
+      "Talleres grupales de memoria y estimulación cognitiva para mayores en A Coruña.",
+    images: ["https://logopediacastelo.com/full_logo.png"],
   },
 };
 
@@ -52,6 +76,18 @@ export default function EstimulacionCognitivaPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebPage",
+                "@id":
+                  "https://logopediacastelo.com/servicios/estimulacion-cognitiva#webpage",
+                url: "https://logopediacastelo.com/servicios/estimulacion-cognitiva",
+                name: "Talleres de Estimulación Cognitiva para Mayores | Logopedia Castelo",
+                description:
+                  "Talleres grupales de estimulación cognitiva para mayores en A Coruña.",
+                isPartOf: { "@id": "https://logopediacastelo.com/#website" },
+                about: { "@id": "https://logopediacastelo.com/#organization" },
+                inLanguage: "es",
+              },
               {
                 "@type": "Service",
                 "@id":

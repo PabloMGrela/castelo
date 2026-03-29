@@ -9,11 +9,34 @@ export const metadata: Metadata = {
   title: "Intervención en Contexto Educativo y Familiar",
   description:
     "Intervención logopédica en el entorno natural del paciente: domicilio, cole, parque. Orientación familiar y apoyo a la comunicación en A Coruña.",
+  keywords: [
+    "logopedia domicilio A Coruña",
+    "logopeda contexto natural",
+    "intervención familiar logopedia",
+    "logopeda colegio",
+    "orientación familiar logopeda",
+  ],
   alternates: { canonical: "/servicios/intervencion-familiar" },
   openGraph: {
     title: "Intervención en Contexto Educativo y Familiar | Logopedia Castelo",
     description:
       "Logopedia fuera de la clínica: visitas al domicilio, al colegio y a los contextos naturales del paciente. Pautas in situ para la familia y el entorno educativo.",
+    url: "https://logopediacastelo.com/servicios/intervencion-familiar",
+    images: [
+      {
+        url: "https://logopediacastelo.com/full_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Intervención en Contexto Educativo y Familiar - Logopedia Castelo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Intervención en Contexto Educativo y Familiar | Logopedia Castelo",
+    description:
+      "Logopedia en el domicilio, el colegio y el entorno natural del paciente en A Coruña.",
+    images: ["https://logopediacastelo.com/full_logo.png"],
   },
 };
 
@@ -50,6 +73,18 @@ export default function IntervencionFamiliarPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebPage",
+                "@id":
+                  "https://logopediacastelo.com/servicios/intervencion-familiar#webpage",
+                url: "https://logopediacastelo.com/servicios/intervencion-familiar",
+                name: "Intervención en Contexto Educativo y Familiar | Logopedia Castelo",
+                description:
+                  "Intervención logopédica en el entorno natural del paciente en A Coruña.",
+                isPartOf: { "@id": "https://logopediacastelo.com/#website" },
+                about: { "@id": "https://logopediacastelo.com/#organization" },
+                inLanguage: "es",
+              },
               {
                 "@type": "Service",
                 "@id":

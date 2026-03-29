@@ -5,18 +5,42 @@ import Navbar from "../components/Navbar";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import { strings } from "@/lib/strings";
-import { buildBreadcrumbs } from "@/lib/schema";
+import { buildBreadcrumbsNode } from "@/lib/schema";
 import CvCard from "./CvCard";
 
 export const metadata: Metadata = {
   title: "Cristina Barrós Pérez, Logopeda en A Coruña",
   description:
     "Cristina Barrós Pérez, logopeda colegiada nº 15-0360 con más de 13 años de experiencia. Especializada en Atención Temprana y Terapia Miofuncional. Atiende en castellano y en gallego en A Coruña.",
+  keywords: [
+    "logopeda A Coruña",
+    "Cristina Barrós Pérez",
+    "logopeda colegiada",
+    "Atención Temprana",
+    "Terapia Miofuncional",
+    "logopeda Galicia",
+  ],
   alternates: { canonical: "/sobre-mi" },
   openGraph: {
     title: "Sobre mí - Cristina Barrós Pérez | Logopedia Castelo",
     description:
       "Logopeda colegiada nº 15-0360. Especialista en logopedia clínica para todas las etapas de la vida en A Coruña.",
+    url: "https://logopediacastelo.com/sobre-mi",
+    images: [
+      {
+        url: "https://logopediacastelo.com/aboutme.webp",
+        width: 800,
+        height: 1067,
+        alt: "Cristina Barrós Pérez - Logopeda en A Coruña",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cristina Barrós Pérez, Logopeda en A Coruña | Logopedia Castelo",
+    description:
+      "Logopeda colegiada nº 15-0360 con más de 13 años de experiencia. Especializada en Atención Temprana y Terapia Miofuncional.",
+    images: ["https://logopediacastelo.com/aboutme.webp"],
   },
 };
 
@@ -27,10 +51,26 @@ export default function SobreMiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(buildBreadcrumbs([
-            { name: "Inicio", url: "https://logopediacastelo.com/" },
-            { name: "Sobre mí", url: "https://logopediacastelo.com/sobre-mi" },
-          ]))
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "ProfilePage",
+                "@id": "https://logopediacastelo.com/sobre-mi#webpage",
+                url: "https://logopediacastelo.com/sobre-mi",
+                name: "Cristina Barrós Pérez, Logopeda en A Coruña | Logopedia Castelo",
+                description:
+                  "Cristina Barrós Pérez, logopeda colegiada nº 15-0360 con más de 13 años de experiencia en A Coruña.",
+                isPartOf: { "@id": "https://logopediacastelo.com/#website" },
+                about: { "@id": "https://logopediacastelo.com/#person-cristina" },
+                inLanguage: "es",
+              },
+              buildBreadcrumbsNode([
+                { name: "Inicio", url: "https://logopediacastelo.com/" },
+                { name: "Sobre mí", url: "https://logopediacastelo.com/sobre-mi" },
+              ]),
+            ],
+          })
         }}
       />
       <main>

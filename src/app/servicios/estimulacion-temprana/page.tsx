@@ -10,11 +10,36 @@ export const metadata: Metadata = {
   title: "Estimulación Temprana del Lenguaje (0-6 años)",
   description:
     "Intervención logopédica especializada para niños de 0 a 6 años en A Coruña. Detecto y trato retrasos del lenguaje, TEA, TDL y otras condiciones en las etapas más importantes del desarrollo.",
+  keywords: [
+    "estimulación temprana lenguaje",
+    "logopedia infantil A Coruña",
+    "atención temprana",
+    "retraso del lenguaje niños",
+    "logopeda niños A Coruña",
+    "TEA logopedia",
+    "TDL",
+  ],
   alternates: { canonical: "/servicios/estimulacion-temprana" },
   openGraph: {
     title: "Estimulación Temprana del Lenguaje (0-6 años) | Logopedia Castelo",
     description:
       "Intervención logopédica temprana en A Coruña para niños de 0 a 6 años. Evaluación, terapia lúdica y orientación familiar.",
+    url: "https://logopediacastelo.com/servicios/estimulacion-temprana",
+    images: [
+      {
+        url: "https://logopediacastelo.com/full_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Estimulación Temprana del Lenguaje - Logopedia Castelo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Estimulación Temprana del Lenguaje (0-6 años) | Logopedia Castelo",
+    description:
+      "Logopedia para niños de 0 a 6 años en A Coruña. Evaluación, terapia lúdica y orientación familiar.",
+    images: ["https://logopediacastelo.com/full_logo.png"],
   },
 };
 
@@ -52,6 +77,18 @@ export default function EstimulacionTempranaPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
+              {
+                "@type": "WebPage",
+                "@id":
+                  "https://logopediacastelo.com/servicios/estimulacion-temprana#webpage",
+                url: "https://logopediacastelo.com/servicios/estimulacion-temprana",
+                name: "Estimulación Temprana del Lenguaje (0-6 años) | Logopedia Castelo",
+                description:
+                  "Intervención logopédica especializada para niños de 0 a 6 años en A Coruña.",
+                isPartOf: { "@id": "https://logopediacastelo.com/#website" },
+                about: { "@id": "https://logopediacastelo.com/#organization" },
+                inLanguage: "es",
+              },
               {
                 "@type": "Service",
                 "@id":
