@@ -478,7 +478,7 @@ export default function TerapiaMiofuncionalPage() {
                 Pide tu primera consulta
               </Link>
               <Link
-                href="/#servicios"
+                href="/servicios"
                 className="text-sm font-medium text-white/70 underline-offset-4 hover:text-white hover:underline transition-colors"
               >
                 Ver todos los servicios

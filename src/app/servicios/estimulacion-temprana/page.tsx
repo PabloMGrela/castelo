@@ -66,7 +66,7 @@ export default function EstimulacionTempranaPage() {
         <ol className="mx-auto flex max-w-[1200px] items-center gap-2 px-6 py-2 text-sm text-gray-500 md:px-16" role="list">
           <li><a href="/" className="hover:text-primary transition-colors">Inicio</a></li>
           <li aria-hidden="true" className="select-none">›</li>
-          <li><a href="/#servicios" className="hover:text-primary transition-colors">Servicios</a></li>
+          <li><a href="/servicios" className="hover:text-primary transition-colors">Servicios</a></li>
           <li aria-hidden="true" className="select-none">›</li>
           <li className="font-medium text-primary" aria-current="page">Estimulación Temprana</li>
         </ol>
@@ -122,7 +122,7 @@ export default function EstimulacionTempranaPage() {
                 { name: "Inicio", url: "https://logopediacastelo.com/" },
                 {
                   name: "Servicios",
-                  url: "https://logopediacastelo.com/#servicios",
+                  url: "https://logopediacastelo.com/servicios",
                 },
                 {
                   name: "Estimulación Temprana",
@@ -155,7 +155,7 @@ export default function EstimulacionTempranaPage() {
                 aria-hidden="true"
               />
               <Link
-                href="/#servicios"
+                href="/servicios"
                 className="text-base font-bold tracking-[4px] text-secondary uppercase hover:text-secondary/80 transition-colors"
               >
                 Servicios
@@ -450,7 +450,7 @@ export default function EstimulacionTempranaPage() {
                 Pide tu primera consulta
               </Link>
               <Link
-                href="/#servicios"
+                href="/servicios"
                 className="text-sm font-medium text-white/70 underline-offset-4 hover:text-white hover:underline transition-colors"
               >
                 Ver todos los servicios

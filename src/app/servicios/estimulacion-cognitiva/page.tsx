@@ -65,7 +65,7 @@ export default function EstimulacionCognitivaPage() {
         <ol className="mx-auto flex max-w-[1200px] items-center gap-2 px-6 py-2 text-sm text-gray-500 md:px-16" role="list">
           <li><a href="/" className="hover:text-primary transition-colors">Inicio</a></li>
           <li aria-hidden="true" className="select-none">›</li>
-          <li><a href="/#servicios" className="hover:text-primary transition-colors">Servicios</a></li>
+          <li><a href="/servicios" className="hover:text-primary transition-colors">Servicios</a></li>
           <li aria-hidden="true" className="select-none">›</li>
           <li className="font-medium text-primary" aria-current="page">Estimulación Cognitiva</li>
         </ol>
@@ -121,7 +121,7 @@ export default function EstimulacionCognitivaPage() {
                 { name: "Inicio", url: "https://logopediacastelo.com/" },
                 {
                   name: "Servicios",
-                  url: "https://logopediacastelo.com/#servicios",
+                  url: "https://logopediacastelo.com/servicios",
                 },
                 {
                   name: "Estimulación Cognitiva para la Tercera Edad",
@@ -151,7 +151,7 @@ export default function EstimulacionCognitivaPage() {
             <div className="flex items-center gap-6">
               <div className="h-0.5 w-[60px] bg-secondary" aria-hidden="true" />
               <Link
-                href="/#servicios"
+                href="/servicios"
                 className="text-base font-bold tracking-[4px] text-secondary uppercase hover:text-secondary/80 transition-colors"
               >
                 Servicios
@@ -397,12 +397,20 @@ export default function EstimulacionCognitivaPage() {
               mente y mantenerte activo, pide una primera cita y te buscaré un grupo lo
               antes posible.
             </p>
-            <Link
-              href="/#contacto"
-              className="mt-10 inline-block rounded-full bg-secondary px-10 py-4 text-base font-bold text-primary transition-opacity hover:opacity-90"
-            >
-              Pedir primera cita
-            </Link>
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/#contacto"
+                className="inline-block rounded-full bg-secondary px-10 py-4 text-base font-bold text-primary transition-opacity hover:opacity-90"
+              >
+                Pedir primera cita
+              </Link>
+              <Link
+                href="/servicios"
+                className="text-sm font-medium text-white/70 underline-offset-4 hover:text-white hover:underline transition-colors"
+              >
+                Ver todos los servicios
+              </Link>
+            </div>
           </div>
         </section>
 

@@ -62,7 +62,7 @@ export default function IntervencionFamiliarPage() {
         <ol className="mx-auto flex max-w-[1200px] items-center gap-2 px-6 py-2 text-sm text-gray-500 md:px-16" role="list">
           <li><a href="/" className="hover:text-primary transition-colors">Inicio</a></li>
           <li aria-hidden="true" className="select-none">›</li>
-          <li><a href="/#servicios" className="hover:text-primary transition-colors">Servicios</a></li>
+          <li><a href="/servicios" className="hover:text-primary transition-colors">Servicios</a></li>
           <li aria-hidden="true" className="select-none">›</li>
           <li className="font-medium text-primary" aria-current="page">Intervención Familiar</li>
         </ol>
@@ -118,7 +118,7 @@ export default function IntervencionFamiliarPage() {
                 { name: "Inicio", url: "https://logopediacastelo.com/" },
                 {
                   name: "Servicios",
-                  url: "https://logopediacastelo.com/#servicios",
+                  url: "https://logopediacastelo.com/servicios",
                 },
                 {
                   name: "Intervención en Contexto Educativo y Familiar",
@@ -148,7 +148,7 @@ export default function IntervencionFamiliarPage() {
             <div className="flex items-center gap-6">
               <div className="h-0.5 w-[60px] bg-secondary" aria-hidden="true" />
               <Link
-                href="/#servicios"
+                href="/servicios"
                 className="text-base font-bold tracking-[4px] text-secondary uppercase hover:text-secondary/80 transition-colors"
               >
                 Servicios
@@ -436,3 +436,4 @@ export default function IntervencionFamiliarPage() {
     </>
   );
 }
+
