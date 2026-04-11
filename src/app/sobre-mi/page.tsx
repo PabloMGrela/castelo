@@ -62,7 +62,7 @@ export default function SobreMiPage() {
                 description:
                   "Cristina Barrós Pérez, logopeda colegiada nº 15-0360 con más de 13 años de experiencia en A Coruña.",
                 isPartOf: { "@id": "https://logopediacastelo.com/#website" },
-                about: { "@id": "https://logopediacastelo.com/#person-cristina" },
+                mainEntity: { "@id": "https://logopediacastelo.com/#person-cristina" },
                 inLanguage: "es",
               },
               buildBreadcrumbsNode([
