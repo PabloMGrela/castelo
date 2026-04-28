@@ -52,19 +52,22 @@ const prices = [
   {
     label: "Sesión individual",
     duration: "45 minutos",
-    price: "30 €",
+    price: "30 €/sesión",
+    unit: "",
     note: "Estimulación temprana, dificultades de aprendizaje, terapia miofuncional...",
   },
   {
     label: "Intervención en contexto natural",
     duration: "1 hora",
-    price: "45 €",
+    price: "45 €/sesión",
+    unit: "",
     note: "Sesiones en domicilio, colegio u otros entornos naturales del paciente.",
   },
   {
     label: "Taller de estimulación cognitiva",
     duration: "1 hora",
     price: "50 €/mes",
+    unit: "",
     note: "Sesiones grupales de entre 3 y 8 participantes. Jueves por la mañana. (Consultar disponibilidad de otros horarios)",
   },
 ];
@@ -135,13 +138,13 @@ export default function TarifasPage() {
                 provider: { "@id": "https://logopediacastelo.com/#organization" },
                 offers: {
                   "@type": "Offer",
-                  price: "20",
+                  price: "50",
                   priceCurrency: "EUR",
                   priceSpecification: {
                     "@type": "UnitPriceSpecification",
-                    price: "20",
+                    price: "50",
                     priceCurrency: "EUR",
-                    unitText: "por sesión grupal de 1 hora",
+                    unitText: "mensual por sesiones grupales de 1 hora",
                   },
                 },
               },
@@ -241,7 +244,7 @@ export default function TarifasPage() {
             </div>
 
             <div className="mt-10 grid gap-6 grid-cols-1 md:grid-cols-3">
-              {prices.map(({ label, duration, price, note }) => (
+              {prices.map(({ label, duration, price, note, unit }) => (
                 <div
                   key={label}
                   className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
@@ -251,9 +254,14 @@ export default function TarifasPage() {
                   </p>
                   <p className="mt-2 text-sm text-gray-500">{duration}</p>
                   <p className="mt-6 font-[family-name:var(--font-playfair)] text-5xl font-extrabold text-gray-900">
-                    {price}
+                    {price.split("/")[0]}
+                    {price.includes("/") && (
+                      <span className="text-2xl font-bold">
+                        /{price.split("/")[1]}
+                      </span>
+                    )}
                   </p>
-                  <p className="mt-1 text-xs text-gray-400">por sesión</p>
+                  {unit && <p className="mt-1 text-xs text-gray-400">{unit}</p>}
                   <p className="mt-6 flex-1 text-sm leading-[1.7] text-gray-600">
                     {note}
                   </p>

@@ -107,13 +107,13 @@ export default function EstimulacionCognitivaPage() {
                 },
                 offers: {
                   "@type": "Offer",
-                  price: "20",
+                  price: "50",
                   priceCurrency: "EUR",
                   priceSpecification: {
                     "@type": "UnitPriceSpecification",
-                    price: "20",
+                    price: "50",
                     priceCurrency: "EUR",
-                    unitText: "por sesión grupal de 1 hora",
+                    unitText: "mensual por sesiones grupales de 1 hora",
                   },
                 },
               },
