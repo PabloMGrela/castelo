@@ -70,8 +70,8 @@ function ServiceCard({
         {title}
       </h3>
       {href && (
-        <span className="mt-4 text-xs font-semibold tracking-widest text-primary uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          Saber más →
+        <span className="mt-4 text-xs font-semibold tracking-widest text-primary uppercase opacity-100 transition-opacity duration-300 md:opacity-0 group-hover:opacity-100">
+          Ver más →
         </span>
       )}
     </>
