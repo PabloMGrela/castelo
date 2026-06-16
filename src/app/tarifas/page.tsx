@@ -42,10 +42,11 @@ export const metadata: Metadata = {
 };
 
 const schedule = [
-  { day: "Lunes", hours: "15:45 – 20:15" },
-  { day: "Martes", hours: "15:45 – 20:15" },
-  { day: "Miércoles", hours: "15:45 – 20:15" },
-  { day: "Jueves", hours: "10:00 – 12:15 (talleres) · 15:45 – 20:15" },
+  { day: "Lunes", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
+  { day: "Martes", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
+  { day: "Miércoles", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
+  { day: "Jueves", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
+  { day: "Viernes", hours: ["Cerrado"] },
 ];
 
 const prices = [
@@ -177,7 +178,7 @@ export default function TarifasPage() {
               Tarifas y Horarios
             </h1>
             <p className="mt-6 max-w-[600px] text-lg leading-[1.8] text-white/70">
-              Información actualizada a marzo de 2026. Ante cualquier duda, no dudes en
+              Información actualizada a junio de 2026. Ante cualquier duda, no dudes en
               contactarme.
             </p>
           </div>
@@ -201,7 +202,7 @@ export default function TarifasPage() {
               </h2>
             </div>
 
-            <div className="mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
               {schedule.map(({ day, hours }) => (
                 <div
                   key={day}
@@ -210,15 +211,16 @@ export default function TarifasPage() {
                   <p className="text-xs font-bold tracking-[3px] text-primary uppercase">
                     {day}
                   </p>
-                  <p className="mt-3 text-base font-semibold leading-[1.7] text-gray-800">
-                    {hours}
-                  </p>
+                  <div className="mt-3">
+                    {hours.map((h) => (
+                      <p key={h} className="text-base font-semibold leading-[1.7] text-gray-800">
+                        {h}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-sm text-gray-500">
-              * Consultar disponibilidad de otros horarios.
-            </p>
           </div>
         </section>
 
