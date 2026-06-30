@@ -42,11 +42,13 @@ export const metadata: Metadata = {
 };
 
 const schedule = [
-  { day: "Lunes", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
-  { day: "Martes", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
-  { day: "Miércoles", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
-  { day: "Jueves", hours: ["10:45 – 13:00", "15:45 – 20:15"] },
+  { day: "Lunes", hours: ["10:45 – 13:00", "Tardes con cita previa"] },
+  { day: "Martes", hours: ["10:45 – 13:00", "Tardes con cita previa"] },
+  { day: "Miércoles", hours: ["10:45 – 13:00", "Tardes con cita previa"] },
+  { day: "Jueves", hours: ["10:45 – 13:00", "Tardes con cita previa"] },
   { day: "Viernes", hours: ["Cerrado"] },
+  { day: "Sábado", hours: ["Cerrado"] },
+  { day: "Domingo", hours: ["Cerrado"] },
 ];
 
 const prices = [
