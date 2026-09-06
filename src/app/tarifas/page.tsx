@@ -41,6 +41,8 @@ export const metadata: Metadata = {
   },
 };
 
+const vacationNotice = { active: true, until: "1 de octubre" };
+
 const schedule = [
   { day: "Lunes", hours: ["10:45 – 13:00", "Tardes con cita previa"] },
   { day: "Martes", hours: ["10:45 – 13:00", "Tardes con cita previa"] },
@@ -204,25 +206,39 @@ export default function TarifasPage() {
               </h2>
             </div>
 
-            <div className="mt-10 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
-              {schedule.map(({ day, hours }) => (
-                <div
-                  key={day}
-                  className="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm"
-                >
-                  <p className="text-xs font-bold tracking-[3px] text-primary uppercase">
-                    {day}
-                  </p>
-                  <div className="mt-3">
-                    {hours.map((h) => (
-                      <p key={h} className="text-base font-semibold leading-[1.7] text-gray-800">
-                        {h}
-                      </p>
-                    ))}
+            {vacationNotice.active ? (
+              <div className="mt-10 rounded-3xl border border-primary/20 bg-primary p-10 text-center shadow-sm sm:p-14">
+                <p className="text-xs font-bold tracking-[3px] text-secondary uppercase">
+                  Aviso
+                </p>
+                <p className="mt-3 font-[family-name:var(--font-playfair)] text-2xl font-extrabold text-white sm:text-3xl">
+                  Cerrado por vacaciones
+                </p>
+                <p className="mt-3 text-base font-semibold text-secondary sm:text-lg">
+                  Volvemos el {vacationNotice.until}
+                </p>
+              </div>
+            ) : (
+              <div className="mt-10 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+                {schedule.map(({ day, hours }) => (
+                  <div
+                    key={day}
+                    className="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm"
+                  >
+                    <p className="text-xs font-bold tracking-[3px] text-primary uppercase">
+                      {day}
+                    </p>
+                    <div className="mt-3">
+                      {hours.map((h) => (
+                        <p key={h} className="text-base font-semibold leading-[1.7] text-gray-800">
+                          {h}
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
