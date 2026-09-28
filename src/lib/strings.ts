@@ -131,7 +131,7 @@ export const strings = {
   contactSubtitle: "¿Hablamos? Estoy aquí para ayudarte.",
   contactPhoneTitle: "Teléfono",
   contactPhoneVal: "+34 626 929 600",
-  contactPhoneSub: "Lunes a Viernes, 15:45 - 20:15",
+  contactPhoneSub: "Lunes a Viernes, 15:45 - 20:00",
   contactEmailTitle: "Email",
   contactEmailVal: "hola@logopediacastelo.com",
   contactEmailSub: "Te responderé en menos de 24h",

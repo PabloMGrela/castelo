@@ -45,9 +45,9 @@ export const jsonLd = {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-          opens: "10:45",
-          closes: "13:00",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "15:45",
+          closes: "20:00",
         },
       ],
       amenityFeature: [
